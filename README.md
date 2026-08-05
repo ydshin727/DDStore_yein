@@ -145,7 +145,7 @@
       ┣ README.md/                              <br>
     </td>
     <td>
-      <img width="800" height="437" alt="전체구조-yein" src="https://github.com/user-attachments/assets/ca8b869b-8cd3-43f1-9f7e-39faee7bc151" />
+      <img width="790" height="437" alt="전체구조-yein" src="https://github.com/user-attachments/assets/ca8b869b-8cd3-43f1-9f7e-39faee7bc151" />
     </td>
   </tr>
 </table>
