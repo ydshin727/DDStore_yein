@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/9f09e805-826f-4b11-9449-d22eb78d7d5c" width="400" />
+  <img alt="댕댕상점" src="https://github.com/user-attachments/assets/3bb2a602-19c8-4ce9-96ee-f10f0134a4d4" width="400" />
+
   
   ## 🐾 반려견의 행복을 주문하다, 댕댕상점
   **반려견 보호자를 위한 맞춤형 이커머스 플랫폼**
@@ -12,33 +13,35 @@
 
 ---
 
-## 🎯 프로젝트 개요
+## 📌 선정 배경 및 기획 의도
 
-<details>
-  <summary><b>선정 배경 및 기획 의도</b></summary>
-  
-  최근 1인 가구의 급증과 함께 반려동물을 가족처럼 여기는 '펫 패밀리'가 늘어나며 **1,500만 반려 시대**가 열렸습니다.
-  특히 국내 펫 푸드 시장이 9천억 원 규모로 성장하고, 이 중 **78%가 온라인**에서 거래된다는 점에 주목했습니다. 
+최근 **1인 가구 증가**와 함께 반려동물을 가족처럼 여기는 **'펫 패밀리'** 문화가 확산되며, 국내는 **1,500만 반려동물 시대**에 접어들었습니다.
 
-  저희는 수많은 반려동물 중에서도 약 **75%의 압도적 비중을 차지하는 '반려견'** 유저들에게 집중했습니다.
-  기존 대형 플랫폼의 복잡한 정보 과부하에서 벗어나, 반려견 보호자가 가장 쉽고 빠르게 필요한 물건을 찾을 수 있는 **버티컬 커머스(Vertical Commerce)** 를 지향합니다.
-  
-</details>
+또한 국내 **펫푸드 시장은 약 9천억 원 규모**로 성장했으며, **전체 거래의 약 78%가 온라인**에서 이루어지고 있습니다.
 
-<details>
-  <summary><b>활용 방안 및 기대 효과</b></summary>
+저희는 반려동물 중에서도 **약 75%를 차지하는 반려견 보호자**를 주요 타겟으로 선정하였습니다.
 
-  단순한 쇼핑몰을 넘어, 사용자가 머물고 싶은 환경을 만들기 위해 기술적으로 고민했습니다.
+기존 종합 쇼핑몰의 복잡한 상품 구성에서 벗어나, **반려견 용품만을 전문적으로 제공하는 버티컬 커머스(Vertical Commerce)** 를 구축하여 사용자가 필요한 상품을 쉽고 빠르게 찾을 수 있도록 기획하였습니다.
 
-  * **앱처럼 매끄러운 쇼핑 경험**
-    * React 기반의 SPA(Single Page Application)로 구현하여, 페이지 전환 시 끊김 없는 사용자 경험(UX)을 제공합니다.
-  * **언제 어디서든 완벽한 화면**
-    * 반응형 웹 디자인을 적용해 데스크탑은 물론, 산책 중 모바일 기기에서도 제약 없이 쇼핑을 즐길 수 있습니다.
-  * **사용자 중심의 가치 창출**
-    * 직관적인 인터페이스를 통해 사용자의 쇼핑 스트레스를 줄이고, 실제 구매로 이어지는 **전환율을 극대화**하는 비즈니스 모델을 구축했습니다.
+---
 
-</details>
+## 🎯 활용 방안 및 기대 효과
 
+### 앱과 같은 쇼핑 경험
+- React 기반 **SPA(Single Page Application)** 로 구현하여 페이지 이동 시 새로고침 없는 부드러운 사용자 경험(UX) 제공
+
+### 다양한 기기 지원
+- **반응형 웹**을 적용하여 PC와 모바일 환경 모두에서 최적화된 화면 제공
+
+### 사용자 중심의 쇼핑 환경
+- 직관적인 UI/UX를 통해 원하는 상품을 빠르게 탐색할 수 있도록 설계
+- 구매 의사가 높은 시점에 **추천 상품 모달**을 제공하여 추가 구매 유도
+
+### 기대 효과
+- 사용자 편의성 향상
+- 쇼핑 이탈률 감소
+- 구매 전환율 및 플랫폼 수익 향상
+    
 ---
 
 ## 🛠️ 기술 스택
@@ -96,7 +99,7 @@
 ## 🧑‍🤝‍🧑 팀 정보
 | 이름 | 역할 | 업무 |
 | :---: | :---: | :--- |
-**민예인** | **팀장** | - 프로젝트 구조 및 라우터 설계 <br> - Git/GitHub 관리 <br> - Figma/PPT 초안 작성 <br> - <b>장바구니/결제, 추천 상품, 알림</b>
+**민예인** | **👑<br>팀장** | - 프로젝트 구조 및 라우터 설계 <br> - Git/GitHub 관리 <br> - Figma/PPT 초안 작성 <br> - <b>장바구니/결제, 추천 상품, 알림</b>
 김주* | 팀원 | - Home, 상품(메인/상세) 및 후기 페이지, 상품 검색, Header/Footer
 김우* | 팀원 | - 로그인/회원가입, 마이페이지, 관리자 페이지
 김규* | 팀원 | - PPT 전반 작성 <br> - Index, 커뮤니티 게시판, 주문처
@@ -142,7 +145,7 @@
       ┣ README.md/                              <br>
     </td>
     <td>
-      <img width="800" height="437" alt="Image" src="https://github.com/user-attachments/assets/7927fa93-317f-4e34-b317-77180974f22b" />
+      <img width="800" height="437" alt="전체구조-yein" src="https://github.com/user-attachments/assets/ca8b869b-8cd3-43f1-9f7e-39faee7bc151" />
     </td>
   </tr>
 </table>
@@ -164,8 +167,8 @@
       <th>라우터 설계</th>
     </tr>
     <tr>
-      <td><img width="169" height="461" alt="image" src="https://github.com/user-attachments/assets/b3877fbe-bef3-485c-9111-c0c6c9f3e642" /></td>
-      <td><img width="338" height="461" alt="image" src="https://github.com/user-attachments/assets/c1ccc3fe-df19-4608-9a83-0604be283054" /></td>
+      <td><img width="169" height="461" alt="image" src="https://github.com/user-attachments/assets/0bcba72a-2745-48b1-8f1d-4546329c4681" /></td>
+      <td><img width="338" height="461" alt="image" src="https://github.com/user-attachments/assets/34e85bb8-8cc3-429b-bd9b-e080654c3731" /></td>
     </tr>
   </table>
 
@@ -180,8 +183,8 @@
 
   <table>
     <tr>
-      <td><img width="279" height="425" alt="image" src="https://github.com/user-attachments/assets/0e446b4f-334e-4f42-b315-059afac0199f" /></td>
-      <td><img width="477" height="397" alt="image" src="https://github.com/user-attachments/assets/1d37ff07-5e7e-456c-9b0c-28b8e4640d73" /></td>
+      <td><img width="279" height="425" alt="image" src="https://github.com/user-attachments/assets/358fc59a-5a79-4b9f-8b68-43661c662b3b" /></td>
+      <td><img width="477" height="397" alt="image" src="https://github.com/user-attachments/assets/1ec145fb-32b3-4a28-97cd-284a596a3551" /></td>
     </tr>
   </table>
   
@@ -208,8 +211,8 @@
   
   <table>
     <tr>
-      <td><img width="342" height="400" alt="image" src="https://github.com/user-attachments/assets/0fe9aa5a-b95e-42eb-a91d-ed6b72e72cb0" /></td>
-      <td><img width="356" height="400" alt="image" src="https://github.com/user-attachments/assets/6fed0a00-4e69-4c88-95c2-f671845c2194" /></td>
+      <td><img width="342" height="400" alt="image" src="https://github.com/user-attachments/assets/f71bda1b-54d2-4d4c-80b1-612d75e39efc" /></td>
+      <td><img width="356" height="400" alt="image" src="https://github.com/user-attachments/assets/8dd71f5e-0e2b-4140-80a2-d37ceb0b95e7" /></td>
     </tr>
   </table>
   
@@ -225,13 +228,13 @@
 
   ### 구현
   * Redux Toolkit의 `createAsyncThunk`를 사용하여 장바구니 CRUD 비동기 처리
-  * Card DB 조회 결과를 `Redux Store(cartSlice)`에서 관리하여 UI와 상태 동기화
+  * Cart DB 조회 결과를 `Redux Store(cartSlice)`에서 관리하여 UI와 상태 동기화
   * 장바구니 조회, 수량/옵션 변경, 삭제 기능 구현
   * `addMatcher`를 활용하여 pending/fulfilled/rejected 상태 공통 처리
   * 장바구니 비어 있음 / 로딩 중 / API 오류에 대한 예외 처리 구현
   
   ### 시연 영상
-  https://github.com/user-attachments/assets/f85bf53b-71c0-4321-9020-5eb19f3cefb4
+  https://github.com/user-attachments/assets/385a4018-75d0-4b76-9cc2-27da0997e363
 
 </details>
 
@@ -268,8 +271,8 @@
   * 주문 상품 없음 / 로딩 중 / API 오류에 대한 예외 처리 구현
 
   ### 시연 영상
-  https://github.com/user-attachments/assets/d9a70ca7-569d-4275-80df-8423612da9d0
-  
+  https://github.com/user-attachments/assets/69aade43-3b21-433d-b9f9-ffd4f7809099
+
 </details>
 
 <details>
@@ -291,6 +294,6 @@
   * 주문 상태 변경을 사용자가 즉시 확인할 수 있도록 알림 기능을 구현하여 배송 진행 상황을 쉽게 확인할 수 있도록 함
 
   ### 시연 영상
-  https://github.com/user-attachments/assets/8fca75e5-a2c9-4ad1-8a0d-068acb6eb9b2
+  https://github.com/user-attachments/assets/8a738572-6848-4be1-be92-a4045f00229e
 
 </details>
