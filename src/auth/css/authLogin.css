@@ -1,0 +1,112 @@
+/* authLogin.css */
+
+.authLogin{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authLogin .authLogin-con{
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 로고이미지 크기설정 */
+.authLogin .authLogin-con>h1.logo{
+  width: 342.8px;
+  height: 134px;
+}
+.authLogin .authLogin-con>h1.logo>a>img{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* 컨텐츠 ul 설정 */
+.authLogin .authLogin-con>ul{
+  width: 400px;
+  height: 200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 1vh;
+}
+.authLogin .authLogin-con>ul>li{
+  display: flex;
+}
+/* li요소 중 login input하는 부분만 설정 */
+.authLogin .authLogin-con>ul>li.login-input{
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #ff8800;
+  font-size: 0.8rem;
+}
+.authLogin .authLogin-con>ul>li> .front{
+  flex: 3;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: inherit;
+}
+.authLogin .authLogin-con>ul>li> .back{
+  flex: 7;
+  position: relative;
+  display: flex;
+}
+/* .back 요소의 앞쪽에 컨텐츠 설정 */
+.authLogin .authLogin-con>ul>li> .back::after{
+  content: '|';
+  position: absolute;
+  z-index: 999;
+  top: 8px;
+  left: -10px;
+  color: #c0c0c0;
+}
+.authLogin .authLogin-con>ul>li>span>input{
+  display: block;
+  border: 0px;
+  height: 100%;
+  width: 100%;
+  font-size: inherit;
+  box-sizing: border-box;
+  padding: 0px 10px;
+}
+/* 버튼구역 따로 지정하여 설정 */
+.authLogin .authLogin-con .button-area{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.authLogin .authLogin-con .button-area button{
+  width: 100%;
+  height: 40px;
+  display: block;
+  background-color: #ff8800;
+  border: 0px;
+  color: #ffffff;
+  border: 1px solid #ff8800;
+  transition: 0.2s all;
+}
+.authLogin .authLogin-con .button-area button:hover{
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #ff8800;
+}
+
+@media screen and (max-width:768px) {
+  .authLogin .authLogin-con>ul{
+  width: 300px;
+  height: 200px;
+}
+.authLogin .authLogin-con .button-area{
+  width: 300px;
+}
+}

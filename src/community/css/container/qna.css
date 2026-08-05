@@ -1,0 +1,459 @@
+/* ==========================================================================
+   전체 컨테이너 및 타이틀 (Notice 통일)
+   ========================================================================== */
+.qna {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.qna-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 30px;
+    border-left: 6px solid #ff8800;
+    padding-left: 15px;
+}
+
+
+/* ==========================================================================
+   상단 헤더 (관리자 요약 & 글쓰기 버튼)
+   ========================================================================== */
+.qna .qna-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.qna .admin-dashboard-summary {
+    display: flex;
+    gap: 12px;
+}
+
+.qna .admin-summary,
+.qna .admin-summary-item {
+    background: #fff;
+    border: 1px solid #ffcc99;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.qna .admin-summary:hover {
+    background-color: #fffaf5;
+    border-color: #ff8800;
+}
+
+/* 글쓰기 버튼 */
+.write-btn {
+    all: unset;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100px !important;
+    height: 40px !important;
+
+    background-color: #ff8800 !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    /* 글자 높이 간섭 차단 */
+    cursor: pointer !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.qna .write-btn:hover {
+    background-color: #e67a00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 136, 0, 0.2);
+}
+
+.qna .write-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* ==========================================================================
+   테이블 기본 스타일 (Notice와 동일)
+   ========================================================================== */
+.qna .qna-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid #333;
+}
+
+.qna .qna-table th {
+    background-color: #fcfcfc;
+    padding: 18px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    font-weight: 700;
+    color: #444;
+}
+
+.qna .qna-table td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14.5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 게시판 호버 액션 */
+.qna .qna-table tbody tr:hover {
+    background-color: #fff8f0;
+    box-shadow: inset 4px 0 0 #ff8800;
+}
+
+.qna .qna-table tbody tr:active {
+    background-color: #ffebd4;
+    transform: scale(0.998);
+}
+
+/* 상단 고정글(필독) 강조 스타일 */
+.qna .fixed-row {
+    background-color: #fff9f2 !important;
+    border-left: 4px solid #ff8800;
+}
+
+.qna .fixed-row td {
+    font-weight: 700;
+    color: #222;
+}
+
+.qna .fixed-title {
+    color: #ff4e00;
+}
+
+.qna .fixed-badge {
+    display: inline-block;
+    background-color: #ff8800;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 2px 4px rgba(255, 136, 0, 0.2);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   제목 열 및 상태 뱃지
+   ========================================================================== */
+.qna .td-title {
+    flex: 1 !important;
+    /* 제목 영역이 남은 공간을 다 차지하게 함 */
+    gap: 8px;
+    /* 뱃지와 제목 사이 간격 */
+    text-align: left !important;
+    padding-left: 20px !important;
+    cursor: pointer;
+
+    max-width: 200px;
+    /* 임의의 최대 크기를 줘서 글자가 뚫고 나가는 것을 막음 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qna .td-title:hover {
+    color: #ff8800;
+
+}
+
+.qna .qna-tag {
+    color: #ff8800;
+    font-weight: 700;
+    margin-right: 6px;
+    white-space: nowrap;
+}
+
+/* 상태 뱃지 */
+.qna .status-badge {
+    display: inline-block !important;
+    height: auto !important;
+    width: auto !important;
+    border-radius: 6px;
+    padding: 3px 10px !important;
+}
+
+.qna .status-label-box {
+    height: 22px !important;
+    /* 뱃지 높이를 고정하여 줄 높이 침범 방지 */
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 0 8px !important;
+    font-size: 11px !important;
+    margin: 0 !important;
+}
+
+.status-badge.waiting,
+.status-label-box.waiting {
+    background-color: #f0f0f0;
+    color: #888;
+}
+
+.status-badge.done,
+.status-label-box.done {
+    background-color: #ff8800;
+    color: #fff;
+}
+
+/* 댓글 뱃지 */
+.comment-count-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    color: #ff8800;
+    background-color: #fff4e6;
+    border: 1px solid #ffcc99;
+    border-radius: 10px;
+    padding: 1px 7px;
+    margin-left: 6px;
+    vertical-align: middle;
+    transition: all 0.2s ease;
+}
+
+.td-title:hover .comment-count-text {
+    background-color: #ff8800;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(255, 136, 0, 0.3);
+}
+
+/* ==========================================================================
+   관리자(Admin) 특수 효과
+   ========================================================================== */
+.author-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-icon-img {
+    width: 30px !important;
+    height: 30px !important;
+    margin-right: 6px !important;
+    margin-bottom: 0 !important;
+    /* 아이콘 하단 마진 제거 필수 */
+    display: block !important;
+}
+
+.admin-text {
+    color: #ff8800 !important;
+    font-weight: 900;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    animation: admin-text-glow 2s infinite ease-in-out;
+}
+
+@keyframes admin-shine {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 2px rgba(255, 136, 0, 0.4)) brightness(1);
+        transform: scale(1);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 8px rgba(255, 136, 0, 0.9)) brightness(1.2);
+        transform: scale(1.05);
+    }
+}
+
+@keyframes admin-text-glow {
+
+    0%,
+    100% {
+        opacity: 0.9;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 5px rgba(255, 136, 0, 0.3);
+    }
+}
+
+/* ==========================================================================
+   4. 반응형 1단계: 태블릿 (1024px 이하)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+    .qna {
+        margin: 40px auto !important;
+        padding: 0 20px !important;
+    }
+
+    .qna-title {
+        font-size: 30px;
+        margin-bottom: 25px;
+        padding-left: 12px;
+        border-left: 6px solid #ff8800;
+    }
+
+    .qna .qna-table th,
+    .qna .qna-table td {
+        padding: 14px 8px;
+        font-size: 14px;
+    }
+
+    /* 중요도 낮은 열 글씨 축소 */
+    .qna-table td:nth-child(4),
+    .qna-table td:nth-child(5) {
+        font-size: 10px;
+        color: #888;
+    }
+}
+
+/* ==========================================================================
+   5. 반응형 2단계: 모바일 (768px 이하) - 한 줄 리스트 디자인
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+    .qna {
+        margin: 30px auto 30px auto !important;
+        padding: 0 15px !important;
+    }
+
+    .qna .qna-title {
+        font-size: 20px auto
+    }
+
+    .qna-table,
+    .qna-table thead,
+    .qna-table tbody {
+        display: block !important;
+        width: 100% imt !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .qna-table thead {
+        display: none !important;
+    }
+
+    /* 한 줄 리스트 */
+    .qna-table tbody tr {
+        display: flex !important;
+        align-items: center !important;
+        padding: 15px !important;
+        /* 요소들 사이의 기본 간격을 12px로 설정 */
+        gap: 12px !important;
+        border-bottom: 1px solid #eee;
+    }
+
+    .qna-table tbody td {
+        display: flex;
+        align-items: center !important;
+        /* 내부 텍스트/뱃지를 세로 중앙으로 */
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    /* 불필요한 정보 숨김 (번호, 작성일, 조회수) */
+    .qna-table tbody td:nth-child(4),
+    .qna-table tbody td:nth-child(5),
+    .qna-table tbody td:nth-child(6) {
+        display: none;
+    }
+
+    /* 제목 및 상태 뱃지 보존 */
+    .qna-table tbody td.td-title {
+        flex: 1 !important;
+        /* 남은 공간을 모두 제목에 할당 */
+        max-width: none !important;
+        /* 제목을 가두던 최대 너비 해제 */
+        padding-left: 0 !important;
+        overflow: hidden;
+    }
+
+    .qna-table tbody td.td-title span {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 작성자 우측 배치 */
+    .qna-table tbody td.author-td {
+        margin-left: auto !important;
+        flex-shrink: 0;
+        padding-right: 5px !important;
+        font-size: 12px;
+        color: #888;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    /* 모바일 관리자 버튼 (있을 경우) 콤팩트화 */
+    .admin-manage-td {
+        display: flex !important;
+        gap: 4px;
+        margin-left: 8px;
+    }
+
+    .admin-manage-td button {
+        width: 44px !important;
+        height: 28px !important;
+        font-size: 11px !important;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+    }
+}
+
+
+/* ==========================================================================
+   7. 화면 맨 위로 스크롤 (Top Button)
+   ========================================================================== */
+/* body를 붙여 우선순위를 높임 */
+body .scroll-top-btn {
+    all: unset;
+    /* 기존 모든 스타일 초기화 (매우 중요) */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: #333 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    z-index: 9999;
+
+    /* 애니메이션 관련 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* 상태 및 호버도 동일하게 body 추가 */
+body .scroll-top-btn.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}

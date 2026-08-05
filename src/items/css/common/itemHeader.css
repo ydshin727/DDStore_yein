@@ -1,0 +1,911 @@
+@import url(./reset.css);
+
+.itemHeader {
+  width: 100%;
+  height: 10vh;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+/* 스크롤 시 */
+.itemHeader.scrolled {
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.1);
+}
+
+.itemHeader .nav {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+}
+
+.itemHeader .nav h1.logo {
+  width: 170px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.itemHeader .nav h1.logo img {
+  display: block;
+  width: 100%;
+}
+
+.itemHeader .nav .gnb {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 40px;
+}
+
+
+.itemHeader .nav .gnb>ul {
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.itemHeader .nav .gnb>ul>li {
+  font-size: clamp(12px, 1.2vw, 18px);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.itemHeader .nav .gnb-center>li:hover {
+  transition: transform 0.15s ease;
+  color: rgb(252, 118, 8);
+}
+
+.itemHeader .nav .gnb>ul>li a {
+  position: relative;
+  display: inline-block;
+  line-height: inherit;
+  font-size: inherit;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.gnb-center {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  list-style: none;
+  margin-left: auto;
+}
+
+.gnb-right {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: auto;
+}
+
+/* yein 추가 */
+.itemHeader .nav .gnb .cart2 {
+  position: relative
+}
+
+.itemHeader .nav .gnb .cart2 .cartCountSpan {
+  position: absolute;
+  /* 위치값: 아이콘 크기(40px)에 맞춰 적절히 배치 */
+  top: -2px;
+  right: -5px;
+
+  /* 디자인 */
+  background-color: #ff4d4f;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+
+  /* 원형 유지 */
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  /* 텍스트 중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 가독성을 위한 테두리 (아이콘과 겹칠 때 대비) */
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+
+  /* 텍스트가 밑줄 효과(::after)에 영향받지 않도록 설정 */
+  z-index: 10;
+}
+
+.itemHeader .nav .gnb .cart2 img {
+  width: 30px;
+  height: 30px;
+  margin-left: -15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.itemHeader .nav .gnb .admin {
+  font-size: 12px;
+}
+
+.itemHeader .nav .gnb .community {
+  font-size: 12px;
+}
+
+.itemHeader .nav .gnb .login {
+  font-size: 12px;
+}
+
+.itemHeader .nav .gnb .join {
+  font-size: 12px;
+  margin-right: 30px;
+}
+
+.itemHeader .nav .gnb .welcome {
+  padding: 1px 0px 3px 0px;
+  font-size: 12px;
+  background: transparent;
+  border-radius: 999px;
+  margin-top: 2px;
+}
+
+.itemHeader .nav .gnb .bye {
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  font-size: 12px;
+  margin-right: 30px;
+}
+
+.itemHeader .nav .gnb>ul>li a:hover::after {
+  width: 80%;
+}
+
+.gnb-center a {
+  font-size: 14px;
+  /* 폰트 축소 */
+}
+
+/* yein 추가 - 알림 */
+
+/* 알림 컨테이너 (li) */
+.itemHeader .nav .gnb .noti-container {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+}
+
+/* 알림 버튼 (이미지 + 배지) */
+.itemHeader .nav .gnb .noti-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.itemHeader .nav .gnb .noti-btn img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* 알림 배지 (기존 cartCountSpan 스타일 활용) */
+.itemHeader .nav .gnb .noti-btn .cartCountSpan {
+  position: absolute;
+  top: -4px;
+  right: 2px;
+  background-color: #ff4d4f;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1.5px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* 📂 알림 모달창 본체 */
+.noti-modal {
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  /* 위치가 너무 치우치면 조정하세요 */
+  width: 340px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
+  padding: 15px;
+  cursor: default;
+  /* 모달 내부에서는 클릭 커서 해제 */
+}
+
+/* 화살표 (선택사항: 모달 위 뾰족한 부분) */
+.noti-modal::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 65px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+
+/* 🛠️ 모달 상단 도구창 */
+.noti-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+}
+
+.noti-tools button {
+  padding: 4px 10px;
+  font-size: 11px;
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 5px;
+  color: #666;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.noti-tools button.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+.noti-tools .confirm-btn {
+  background: #ff7608;
+  /* 오렌지 포인트 컬러 */
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.all-check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #888;
+}
+
+.all-check input {
+  cursor: pointer;
+}
+
+/* 📜 알림 리스트 영역 */
+.noti-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* 스크롤바 디자인 */
+.noti-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.noti-list::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.noti-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 10px;
+  /* 좌우 여백 살짝 추가 */
+  border-bottom: 1px solid #f9f9f9;
+  transition: background 0.2s;
+
+  /* 🔥 [수정] 안 읽은 알림 기본 배경색 (매우 연한 주황/노랑) */
+  background-color: #fffaf0;
+  position: relative;
+}
+
+/* 🔥 [추가] 안 읽은 알림일 때만 앞에 빨간 점 표시 */
+.noti-item:not(.is-read)::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 6px;
+  height: 6px;
+  background-color: #ff4d4f;
+  border-radius: 50%;
+}
+
+.noti-item:hover {
+  background: #fdfdfd;
+}
+
+/* 🔥 [수정] 읽은 알림 스타일: 배경을 흰색으로 바꾸고 투명도 조절 */
+.noti-item.is-read {
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+
+/* 읽은 알림은 빨간 점 제거 */
+.noti-item.is-read::after {
+  display: none;
+}
+
+.noti-item input[type="checkbox"] {
+  margin-top: 4px;
+}
+
+.noti-msg {
+  flex: 1;
+  cursor: pointer;
+  text-align: left;
+}
+
+.noti-msg p {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.5;
+  margin-bottom: 3px;
+  word-break: keep-all;
+  /* 단어 단위 줄바꿈 */
+}
+
+.noti-msg span {
+  font-size: 11px;
+  color: #bbb;
+}
+
+.noti-list .empty {
+  text-align: center;
+  padding: 40px 0;
+  color: #ccc;
+  font-size: 13px;
+}
+
+/* 검색 아이콘 */
+.item-search img {
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* 사이드바 */
+.search-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  /* 화면 밖 */
+  width: 400px;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  z-index: 10000;
+}
+
+.search-sidebar.open {
+  transform: translateX(0);
+}
+
+.search-sidebar input {
+  width: 100%;
+  padding: 20px 20px;
+  font-size: 15px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1.8px solid #ccc;
+  margin-top: 20px;
+}
+
+.search-sidebar input:focus {
+  border-color: #ff7608;
+}
+
+.close-btn {
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  float: right;
+  font-weight: lighter;
+  color: #999595 !important;
+  z-index: 1100;
+  background: #fff
+}
+
+.close-btn:hover {
+  color: #222;
+  background: #fff
+}
+
+/* 배경 어둡게 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 900;
+  transition: opacity 0.3s ease;
+}
+
+.search-sidebar .search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 30px;
+  padding: 0 30px 0 30px;
+}
+
+.search-sidebar .search-section+.search-section {
+  border-top: 1px solid #eee;
+  /* 구분선 */
+  padding-top: 50px;
+  /* 구분선 위 여백 */
+}
+
+.search-sidebar .search-section h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-section .clear-all {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.search-section .clear-all:hover {
+  color: #222;
+}
+
+/* 개별 삭제 버튼 */
+.search-section .delete-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #bbb;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.search-section .delete-btn:hover {
+  color: #222;
+}
+
+/* 클릭 가능한 인기 검색어 */
+.search-section.popular li span.clickable {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.search-section.recent li span.clickable {
+  cursor: pointer;
+  color: #333;
+}
+
+.search-section.recent li span.clickable:hover {
+  color: #333;
+}
+
+.search-section.recent li.empty {
+  cursor: default;
+  color: #bbb;
+}
+
+.search-section.popular li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 3px;
+  font-size: 15px;
+}
+
+.search-section.recent li {
+  font-size: 15px;
+  gap: 8px;
+  padding: 3px 3px;
+  display: flex;
+  align-items: center;
+  font-weight: 450;
+}
+
+.search-section.popular li:hover {
+  background-color: #fff2e5;
+  color: #ff4e08;
+}
+
+.gnb-center a {
+  position: relative;
+  padding-bottom: 6px;
+  color: black;
+  transition: color 0.2s ease;
+}
+
+.gnb-center a:hover {
+  color: #ff7608;
+}
+
+.gnb-center a:hover::after {
+  width: 80%;
+}
+
+.gnb-center a.active {
+  color: #ff7608;
+}
+
+.gnb-center a.active::after {
+  width: 80%;
+}
+
+.search-form {
+  position: relative;
+  margin-top: 20px;
+}
+
+.search-form input {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  /* 오른쪽 공간 확보 */
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-icon-btn {
+  position: absolute;
+  right: 15px;
+  top: 70%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon-btn svg {
+  stroke: #555;
+}
+
+.search-icon-btn:hover svg {
+  stroke: #000;
+}
+
+.event-bar {
+  width: 100%;
+  height: 40px;
+
+  background: linear-gradient(90deg, #ff6b6b, #ff8e53);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.event-bar:hover {
+  background: linear-gradient(90deg, #ff4d4d, #ff7a3d);
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.mobile-menu.open {
+  left: 0;
+}
+
+.mobile-menu ul {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu li {
+  font-size: 3vw;
+}
+
+.mobile-category-bar {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .gnb-center {
+    gap: 0px;
+    padding: 0;
+    font-size: 3vw;
+    /* 간격 축소 */
+  }
+
+  .itemHeader .nav .gnb>ul {
+    gap: 0px;
+    padding: 0;
+    /* 간격 축소 */
+  }
+
+  .itemHeader .nav .gnb {
+    margin: 0;
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .itemHeader {
+    display: flex;
+    flex-direction: column;
+    /* height: auto; */
+  }
+  .event-bar {
+    position: relative;
+    top: 0;
+  }  
+  /* 기존 메뉴 숨기기 */
+  .itemHeader .nav .gnb .gnb-center {
+    display: none;
+  }
+
+  .gnb-right li:not(.noti-container):not(.cart2):not(.item-search) {
+    display: none;
+    /* 로그인/회원가입/환영 메시지 숨기기 */
+  }
+
+  .itemHeader.scrolled {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .gnb-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 여전히 오른쪽 정렬 유지 */
+    margin-right: 16px;        /* 기존 오른쪽 여백 */
+    transform: translateX(-20px); /* 살짝 왼쪽으로 이동 */
+    gap: 12px;                  /* 아이콘 간격 */
+    flex-shrink: 0;       /* 아이콘이 줄어들지 않도록 */
+    margin-right: 8px;    /* 오른쪽 여백 */
+    max-width: 50%;   
+  }
+
+  /* 햄버거 보이기 */
+  .hamburger {
+    display: block !important;
+    font-size: 24px;
+    flex-shrink: 0;
+    order: 1;
+    position: absolute;
+    left: 16px;
+  }
+
+  .itemHeader .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .itemHeader .nav h1.logo {
+    margin: 0;
+    flex: 1;
+    order: 2;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    max-width: 50%;
+  }
+
+  .search-sidebar {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow-y: auto;
+  }
+
+  .search-sidebar {
+    width: 100%;
+    height: 100dvh;
+    /* ⭐ 핵심 (100vh 말고 이거) */
+    right: 0;
+    left: 0;
+    padding: 16px;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+  }
+
+  /* 입력창 넘침 방지 */
+  .search-sidebar input {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  /* 내부 여백 줄이기 */
+  .search-sidebar .search-section {
+    padding: 0;
+  }
+
+  /* 아래 잘림 방지 여유 */
+  .search-sidebar .search-section:last-child {
+    padding-bottom: 40px;
+  }
+
+  .mobile-menu .living-bottom {
+    margin-bottom: 15px;
+  }
+
+  .mobile-menu .sub-menu {
+    font-size: 2.3vw;
+  }
+
+  .mobile-category-bar {
+    display: block;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    transition: top 0.3s ease;
+    /* transition: transform 0.3s ease; */
+    top: 0;
+  }
+
+  .mobile-category-bar ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-category-bar ul {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px 16px;
+    margin: 0;
+    list-style: none;
+    white-space: nowrap;
+
+    -webkit-overflow-scrolling: touch;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-category-bar li {
+    flex-shrink: 0;
+  }
+
+  .mobile-category-bar a {
+    font-size: 2.5vw;
+    color: #555;
+    text-decoration: none;
+    padding: 6px 2px;
+    position: relative;
+    transition: all 0.4s ease;
+  }
+
+  .mobile-category-bar a:active {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+
+  /* 👉 활성 메뉴 */
+  .mobile-category-bar a.active {
+    color: #fd8f27;
+    font-weight: 600;
+  }
+
+  .mobile-category-bar a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ff8b1f;
+    border-radius: 2px;
+  }
+
+  .itemHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+
+  /* 보일 때 */
+  .itemHeader.show {
+    height: 70px;
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+
+  }
+
+  /* 숨길 때 */
+  .itemHeader.hide {
+    transform: translateY(-100%);
+    box-shadow: none; 
+  }
+
+  /* 헤더 있을 때 */
+  .mobile-category-bar.with-header {
+   top: 68px;
+  }
+
+  /* 헤더 사라졌을 때 */
+  .mobile-category-bar.no-header {
+    top: 0px !important;
+  }
+}
+@media (max-width: 600px) {
+  .itemHeader .nav h1.logo {
+    left: 40%;
+  }
+}

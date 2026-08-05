@@ -1,0 +1,280 @@
+/* ==========================================================================
+   1. 전체 레이아웃 및 타이틀 (가로 스크롤 방지 적용)
+   ========================================================================== */
+.faq {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.faq-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 30px;
+    border-left: 6px solid #ff8800;
+    /* 메인 주황색 포인트 */
+    padding-left: 15px;
+}
+
+/* ==========================================================================
+   2. 상단 헤더 및 글쓰기 버튼
+   ========================================================================== */
+.faq-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.write-btn {
+    background-color: #ff8800;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.write-btn:hover {
+    background-color: #e67a00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 136, 0, 0.2);
+}
+
+.write-btn:active {
+    transform: translateY(1px) scale(0.98);
+}
+
+/* ==========================================================================
+   3. FAQ 아코디언 리스트 및 상호작용
+   ========================================================================== */
+.faq-accordion-list {
+    border-top: 2px solid #333;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.faq-item {
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
+}
+
+/* 필독 */
+.faq-item.important {
+    border: 1px solid #ff8800;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 136, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 질문 영역 (호버 피드백 통합) */
+.faq-question {
+    width: 100%;
+    padding: 22px 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 15px;
+    transition: all 0.2s ease;
+    background-color: #fff;
+    box-sizing: border-box;
+    /* 💡 호버 시 패딩이 늘어나도 폭 유지 */
+}
+
+.faq-question:hover {
+    background-color: #fff8f0;
+    padding-left: 30px;
+    /* 💡 오른쪽으로 살짝 밀리는 피드백 */
+}
+
+.faq-question:active {
+    background-color: #ffebd4;
+    transform: scale(0.99);
+    /* 💡 눌리는 효과 */
+}
+
+.q-mark {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ff8800;
+}
+
+.faq-subject {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.arrow {
+    font-size: 14px;
+    color: #999;
+}
+
+/* 활성화(열려있는) 상태 강조 */
+.faq-item.active .faq-question {
+    background-color: #fff4e6;
+    border-bottom: 1px solid #ffcc99;
+}
+
+.faq-item.active .faq-subject {
+    color: #ff8800;
+    font-weight: 800;
+}
+
+/* 답변 영역 */
+.faq-answer {
+    width: 100%;
+    padding: 25px 30px 25px 60px;
+    /* Q 마크 위치 고려한 여백 */
+    background-color: #fafafa;
+    border-top: 1px solid #f2f2f2;
+    line-height: 1.8;
+    font-size: 15px;
+    color: #555;
+    box-sizing: border-box;
+    /* 💡 답변이 길어도 가로 스크롤 방지 */
+}
+
+/* ==========================================================================
+   4. 관리자 전용 컨트롤 (수정/삭제)
+   ========================================================================== */
+.faq-admin-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.faq-admin-controls button {
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.edit-btn {
+    background-color: #fff;
+    color: #ff8800;
+    border: 1px solid #ffcc99;
+}
+
+.edit-btn:hover {
+    background-color: #ff8800;
+    color: #fff;
+}
+
+.delete-btn {
+    background-color: #fff;
+    color: #999;
+    border: 1px solid #ddd;
+}
+
+.delete-btn:hover {
+    background-color: #f5f5f5;
+    color: #333;
+    border-color: #bbb;
+}
+
+/* ==========================================================================
+   5. 반응형 디자인 (1024px / 768px)
+   ========================================================================== */
+
+/* 노트북 및 태블릿 가로 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+    .faq {
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+}
+
+/* 태블릿 세로 및 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .faq {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .faq-title {
+       font-size: 20px auto;
+    }
+
+    /* 질문 영역 모바일 최적화 */
+    .faq-question {
+        padding: 16px 15px;
+        gap: 10px;
+    }
+
+    .faq-question:hover {
+        padding-left: 20px;
+    }
+
+    /* 모바일에서는 밀리는 정도를 줄임 */
+
+    .q-mark {
+        font-size: 18px;
+    }
+
+    .faq-subject {
+        font-size: 14.5px;
+        line-height: 1.4;
+    }
+
+    /* 답변 영역 모바일 최적화 */
+    .faq-answer {
+        padding: 20px 15px 20px 45px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .write-btn {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+
+
+body .scroll-top-btn {
+    all: unset;
+    /* 기존 모든 스타일 초기화 (매우 중요) */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: #333 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    z-index: 9999;
+
+    /* 애니메이션 관련 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* 상태 및 호버도 동일하게 body 추가 */
+body .scroll-top-btn.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}

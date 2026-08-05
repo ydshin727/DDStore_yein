@@ -1,0 +1,336 @@
+@import url(./reset.css);
+body {
+  overflow-x: hidden;
+}
+.best{
+  width: 100%;
+  min-height: calc( 100vh - 80px - 80px);
+
+  display: flex;
+  justify-content: center;
+
+  box-sizing: border-box;
+  padding: 10px;
+}
+.title {
+  opacity: 0;
+  transform: translateY(-40px); /* 위에서 시작 */
+  transition: all 0.6s ease-out;
+  font-size: 2rem;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.title.show {
+  opacity: 1;
+  transform: translateY(0); /* 원래 위치 */
+}
+.best .best-con{
+  flex: 0 1 1400px;
+  box-sizing: border-box;
+}
+.best .best-con .title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+   padding: 50px;
+}
+.best .best-con .itemList{
+  
+  box-sizing: border-box;
+   padding: 0.5vh;
+   
+}
+.best .best-con .itemList .itemList-con>ul{
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ grid-auto-rows: auto;
+ gap: 20px;          /* 칸 사이 간격 */
+ max-width: 1200px;  
+ margin: 0 auto;   
+
+}
+.best .best-con .itemList .itemList-con>ul>li{
+  box-sizing: border-box;
+  padding: 1vh;
+}
+
+.best .best-con .itemList .itemList-con>ul>li .top img{
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.best .best-con .itemList .itemList-con>ul>li .bottom{
+  margin-top: 0px;
+  text-align: center;
+
+}
+.best .best-con .itemList .itemList-con > ul > li .bottom .name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.2;
+  margin-bottom: 6px;
+  height:20px;   
+
+}
+.best .best-con .itemList .itemList-con > ul > li .bottom .price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ff6a00;
+}
+
+.category-top {
+  max-width: 1200px;
+  margin: 40px auto 30px;
+  padding: 0 20px;
+}
+
+.best .best-con .itemList .itemList-con>ul>li .top img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+.best .best-con .itemList .itemList-con .item-link {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.item-count {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.item-count strong {
+  font-weight: 600;
+}
+
+/* 정렬 버튼 리스트 */
+.sort-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 기본 버튼 */
+.sort-list li {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #888;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #fff;
+}
+.sort-list li:hover {
+  border-color: #ff7608;
+  color: #ff7608;
+}
+/* 선택된 상태 */
+.sort-list li.active {
+  border-color: transparent;
+  color: #333333;
+  font-weight: 600;
+  border-color: #ff7608;
+  color: #ff7608;
+}
+.best-con h2{
+  text-align: center;
+  padding: 10px
+}
+.best-con h4{
+  text-align: center;
+  color: #8c8c8c;
+  /* font-size: 14px; */
+  font-weight: 400;
+}
+.best-text {
+  padding: 50px;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px); /* 아래에서 시작 */
+  transition: all 0.6s ease-out;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0); /* 원래 위치 */
+}
+.itemList-con ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 이미지 + 텍스트 자동 정렬 */
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 100%;
+}
+/* 아이템 이미지에도 fade-up 적용 */
+.itemList-con ul li .top img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.6s ease-out;
+
+}
+/* 더보기 버튼 */
+.load-more {
+  text-align: center;
+  padding: 100px 0 0 0;
+}
+
+.load-more button {
+  padding: 10px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .06);
+}
+
+/* 배경 이미지 섹션 */
+.hero-section {
+  position: relative;
+  width:100%;
+  
+  height: 500px; /* 원하는 높이 */
+  background-image: url('/public/images/items_juhee/hero1.jpg');
+  background-size: cover; /* 이미지 꽉 채우기 */
+  background-position: center;
+  background-attachment: fixed; /* 스크롤 시 배경 고정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255); 
+  text-align: center;
+  margin: 200px 0 100px 0;
+  padding-top: 20px; 
+}
+
+/* 글자 영역 */
+.hero-section .text {
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.hero-section a{
+  color: #000000;
+  background-color: #ffffff;
+  padding: 15px 50px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.hero-section .brand-story{
+  padding: 40px;
+}
+/* 기본 (PC) */
+.best .best-con .itemList .itemList-con > ul  {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 태블릿 */
+@media (max-width: 1024px) {
+  .best .best-con .itemList .itemList-con > ul  {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .best .best-con .itemList .itemList-con > ul  {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .best-con h2 {
+    font-size: 4vw;
+  }
+  .best-con h4 {
+    font-size: 2vw;
+  }
+  .best .best-con .itemList .itemList-con > ul > li .bottom .name{
+    font-size: 2.5vw;
+    margin: 0;
+  }
+  .best .best-con .itemList .itemList-con > ul > li .bottom .price  {
+padding-top: 10px;
+    font-size: 2.5vw;
+  }
+  .best-text {
+    padding: 30px 10px;
+  }
+  .best {
+    padding: 0 10px;
+  }
+  .itemList-con ul li {
+    padding: 5px;
+  }
+  .load-more button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+  .hero-section {
+    height: 300px;
+    background-attachment: scroll;
+    margin: 100px 0 50px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 24px;
+  }
+
+  .hero-section p {
+    font-size: 14px;
+  }
+
+  .hero-section a {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  .best .best-con .title {
+    padding-bottom: 0;
+    font-size: 1.4rem;        /* 글씨 작게 */
+    transform: translateY(-20px); /* 이동거리 줄이기 */
+    transition: all 0.4s ease-out; /* 살짝 빠르게 */
+  }
+
+  .best .best-con .title.show {
+    transform: translateY(0);
+  }
+  .category-top {
+    max-width: 1200px;
+    margin: 0;
+    padding: 20px;
+  }
+}
+
+/* 작은 모바일 */
+@media (max-width: 480px) {
+  .best .best-con .itemList .itemList-con > ul  {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+  }
+}

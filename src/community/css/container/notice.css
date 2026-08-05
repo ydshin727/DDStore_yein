@@ -1,0 +1,368 @@
+/* ==========================================================================
+   1. 전체 컨테이너 및 타이틀 (1200px 통일)
+   ========================================================================== */
+.notice {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.notice-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 30px;
+    border-left: 6px solid #ff8800;
+    padding-left: 15px;
+}
+
+/* ==========================================================================
+   2. 상단 헤더 및 등록 버튼
+   ========================================================================== */
+.notice-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.write-btn {
+    background-color: #ff8800;
+    color: #fff;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 136, 0, 0.2);
+    transition: all 0.2s ease;
+
+    /* 위치가 흔들리지 않게 고정 */
+    margin-left: auto;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.write-btn:hover {
+    background-color: #e67a00;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. 테이블 기본 스타일
+   ========================================================================== */
+.notice table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid #333;
+}
+
+.notice th {
+    background-color: #fcfcfc;
+    padding: 18px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    font-weight: 700;
+    color: #444;
+    border-top: 2px solid #333;
+}
+
+.notice td {
+    padding: 16px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14.5px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.notice .notice-table tbody tr {
+    position: relative;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.notice .notice-table tbody tr:hover {
+    background-color: #fff8f0;
+    box-shadow: inset 4px 0 0 #ff8800;
+    /* QnA와 동일한 왼쪽 바 효과 */
+}
+
+.notice .td-title {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* 상단 고정글(필독) 전용 */
+.notice tbody tr.fixed-row {
+    background-color: #fff9f2 !important;
+    border-left: 4px solid #ff8800;
+}
+
+.notice .td-title:hover {
+    color: #ff8800;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.notice .td-title span:hover {
+    color: #ff8800;
+    text-decoration: underline;
+}
+
+/* 글강조 */
+.notice .fixed-row {
+    background-color: #fff9f2 !important;
+    border-left: 4px solid #ff8800;
+}
+
+.notice .fixed-row td {
+    font-weight: 700;
+    color: #ff4e00;
+}
+
+/* ==========================================================================
+   4. 제목 및 뱃지 스타일
+   ========================================================================== */
+.td-title {
+    text-align: left !important;
+    padding-left: 20px !important;
+    cursor: pointer;
+}
+
+.notice .notice-tag {
+    color: #ff8800;
+    font-weight: 700;
+    margin-right: 6px;
+    white-space: nowrap;
+}
+
+
+.fixed-badge {
+    display: inline-block;
+    background-color: #ff8800;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.admin-icon-img {
+    width: 30px !important;
+    height: 30px !important;
+    margin-right: 8px;
+    object-fit: contain;
+    vertical-align: middle;
+    animation: admin-shine 2s infinite ease-in-out;
+    filter: drop-shadow(0 0 2px rgba(255, 136, 0, 0.5));
+}
+
+/* ==========================================================================
+   5. 관리자 수정/삭제 버튼 (PC 기본)
+   ========================================================================== */
+.admin-manage-td {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.admin-manage-td button {
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.notice-edit {
+    background-color: #fff;
+    color: #ff8800;
+    border: 1px solid #ffcc99;
+}
+
+.notice-delete-btn {
+    background-color: #fff;
+    color: #999;
+    border: 1px solid #ddd;
+}
+
+/* ============================================================
+   반응형 1단계: 태블릿 (1024px 이하)
+   ============================================================ */
+@media screen and (max-width: 1024px) {
+    .notice {
+        margin: 40px auto;
+    }
+
+    .notice-title {
+        font-size: 30px;
+    }
+
+    .notice th,
+    .notice td {
+        padding: 14px 8px;
+        font-size: 14px;
+    }
+
+    .td-title {
+        padding-left: 10px !important;
+    }
+}
+
+/* ============================================================
+   반응형 2단계: 모바일 (768px 이하) - 한 줄 리스트 & 버튼 크기 고정
+   ============================================================ */
+@media screen and (max-width: 768px) {
+    .notice {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .notice-title {
+        font-size: 20px auto;
+    }
+
+    .notice table,
+    .notice thead,
+    .notice tbody {
+        display: block;
+        width: 100%;
+    }
+
+    .notice thead {
+        display: none;
+    }
+
+    .notice th {
+        border-top: 2px solid #333;
+    }
+
+    /* 한 줄 리스트 구성 */
+    .notice tbody tr {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        padding: 12px 5px;
+        background-color: #fff;
+        gap: 8px;
+    }
+
+    .notice tbody td {
+        padding: 0;
+        border: none;
+    }
+
+    /* 번호/필독 숨김 혹은 축소 */
+    .notice tbody td:first-child {
+        width: 35px;
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+
+    /* 제목 말줄임 처리 */
+    .notice tbody td.td-title {
+        flex: 1;
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    .notice tbody td.td-title span {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 작성자 */
+    .notice tbody td.author-td {
+        flex-shrink: 0;
+        font-size: 12px;
+        color: #888;
+        margin-left: 5px;
+    }
+
+    /* 작성일, 조회수 완전 숨김 */
+    .notice tbody td:nth-child(4),
+    .notice tbody td:nth-child(5) {
+        display: none;
+    }
+
+    /* 수정/삭제 버튼 크기 절대 고정 로직 */
+    .admin-manage-td {
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        margin-left: 8px !important;
+        flex-shrink: 0 !important;
+        width: auto !important;
+    }
+
+    .admin-manage-td button {
+        /* box-sizing을 지정해야 보더 포함 크기가 계산됨 */
+        box-sizing: border-box !important;
+        width: 44px !important;
+        /* 가로 절대 고정 */
+        height: 28px !important;
+        /* 세로 절대 고정 */
+        padding: 0 !important;
+        /* 패딩 제거로 글자수 영향 차단 */
+        margin: 0 !important;
+        font-size: 11px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 4px !important;
+        border-width: 1px !important;
+        border-style: solid !important;
+        white-space: nowrap !important;
+    }
+
+    .notice-edit {
+        background-color: #fff !important;
+        color: #ff8800 !important;
+        border-color: #ff8800 !important;
+    }
+
+    .notice-delete-btn {
+        background-color: #f9f9f9 !important;
+        color: #999 !important;
+        border-color: #ddd !important;
+    }
+}
+
+body .scroll-top-btn {
+    all: unset;
+    /* 기존 모든 스타일 초기화 (매우 중요) */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: #333 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    z-index: 9999;
+
+    /* 애니메이션 관련 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* 상태 및 호버도 동일하게 body 추가 */
+body .scroll-top-btn.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}

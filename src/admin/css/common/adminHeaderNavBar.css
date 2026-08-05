@@ -1,0 +1,118 @@
+/* adminHeaderNavBar.css */
+
+/* 관리자 페이지의 헤더 중 햄버거 메뉴 관련 스타일 */
+
+/* 기본적으로 1920x1080기준이면 안보이게 설정 */
+.admin-headerNavbar {
+  display: none;
+}
+
+/* 햄버거 메뉴아이콘 만들기 */
+/* 출처 : https://zerotonine2da.tistory.com/206 */
+.admin-headerNavbar input {
+  display: none;
+  padding-left: 60px;
+}
+
+.admin-headerNavbar label {
+  display: block;
+  width: 35px;
+  height: 23px;
+  position: relative;
+  cursor: pointer;
+}
+
+.admin-headerNavbar span {
+  z-index: 1000;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  border-radius: 25px;
+  background-color: #ff8800;
+  transition: all 0.35s;
+}
+
+.admin-headerNavbar .menuIcon span:nth-child(1) {
+  /* 첫번째 span 요소*/
+  top: 0;
+}
+
+.admin-headerNavbar .menuIcon span:nth-child(2) {
+  /* 두번째 span 요소*/
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.admin-headerNavbar .menuIcon span:nth-child(3) {
+  /* 세번째 span 요소*/
+  bottom: 0;
+}
+
+/* 체크박스가 활성화가 되면 실행(햄버거에서 X로) */
+.admin-headerNavbar .on span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.admin-headerNavbar .on span:nth-child(2) {
+  opacity: 0;
+}
+
+.admin-headerNavbar .on span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+.admin-headerNavbar input:checked+label+.sidebar {
+  left: 0;
+}
+
+/* 햄버거메뉴를 누른뒤 나오게될 사이드바 스타일 */
+/* 기본은 왼쪽에 -270px로 놔둬서 보이지 않게 설정 */
+.admin-headerNavbar .sideBar {
+  width: 200px;
+  height: 90vh;
+  background-color: #0000009f;
+  position: fixed;
+  top: 10vh;
+  left: -270px;
+  z-index: 1;
+  transition: all 0.2s;
+}
+
+/* on상태가 되면 보이게 설정 */
+.admin-headerNavbar .on {
+  left: 0px;
+}
+.admin-headerNavbar .sideBar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  box-sizing: border-box;
+  padding: 1vh;
+}
+.admin-headerNavbar .sideBar ul>li {
+  border-radius: 1vw;
+  box-sizing: border-box;
+  padding: 2vh;
+  background-color: #ff8800;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.admin-headerNavbar .sideBar ul>li:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #ff8800;
+}
+
+/* 1024로 내려오면 그때부터 햄버거 메뉴가 보이게 설정 */
+@media screen and (max-width:1024px) {
+  .admin-headerNavbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

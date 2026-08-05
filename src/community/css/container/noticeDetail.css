@@ -1,0 +1,237 @@
+/* ==========================================================================
+   1. 전체 상세 페이지 레이아웃 및 컨테이너
+   ========================================================================== */
+.notice-detail {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1.8;
+    box-sizing: border-box;
+}
+
+.notice-detail-con {
+    background-color: #fff;
+    border: 2px solid #ff8800;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(255, 136, 0, 0.08);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. 헤더 및 정보 영역
+   ========================================================================== */
+.notice-detail .detail-header {
+    padding: 30px 25px;
+    border-bottom: 1px solid #f2f2f2;
+    background-color: #fff9f2; /* QnA와 동일한 연한 주황 배경 */
+}
+
+/* 필독 태그 영역 정렬 */
+.status-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.notice-detail .fixed-badge {
+    background-color: #ff8800;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.notice-detail .category-tag {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ff8800;
+}
+
+.notice-detail .detail-header h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #222;
+    margin: 0;
+    word-break: keep-all;
+}
+
+/* 작성자, 작성일, 조회수 한 줄 정렬 */
+.notice-detail .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #888;
+    padding-top: 15px;
+}
+
+.notice-detail .info .info-left .author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notice-detail .info .info-right {
+    display: flex;
+    text-align: center;
+    gap: 15px;
+}
+
+.notice-detail .info span {
+    display: flex !important;
+    align-items: center !important;
+    line-height: 1 !important;
+}
+.admin-icon-img {
+    width: 30px !important;
+    height: 30px !important;
+    margin-right: 8px;
+    object-fit: contain;
+    vertical-align: middle;
+    animation: admin-shine 2s infinite ease-in-out;
+    filter: drop-shadow(0 0 2px rgba(255, 136, 0, 0.5));
+}
+
+/* ==========================================================================
+   3. 본문 내용
+   ========================================================================== */
+.notice-detail .detail-text {
+    min-height: 250px;
+    padding: 40px 30px;
+    font-size: 17px;
+    color: #444;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/* 5. 하단 버튼 영역 */
+.notice-detail-con .detail-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background-color: #fcfcfc;
+    border-top: 1px solid #eee;
+}
+
+.notice-detail-con button {
+    height: 42px !important;
+    padding: 0 20px !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s;
+    border: none;
+}
+
+.notice-detail-con .list-btn {
+    background-color: #fff !important;
+    color: #ff8800 !important;
+    border: 1px solid #ff8800 !important;
+}
+
+.notice-detail-con .action-group {
+    display: flex;
+    gap: 10px;
+}
+
+.notice-detail-con .edit-btn {
+    background-color: #ff8800 !important;
+    color: #fff !important;
+    width: 80px !important;
+}
+
+.notice-detail-con .delete-btn {
+    background-color: #fff !important;
+    color: #999 !important;
+    border: 1px solid #ddd !important;
+    width: 80px !important;
+}
+
+.notice-detail-con button:hover {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+}
+
+/* 6. 반응형 디자인 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .notice-detail-con {
+        margin: 20px auto;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .notice-detail-con .detail-header {
+        padding: 20px 15px !important;
+        flex-direction: column !important;
+        /* 모바일은 세로로 */
+        gap: 12px !important;
+    }
+
+    .notice-detail-con .header-left h2 {
+        font-size: 20px !important;
+    }
+
+    .notice-detail-con .info {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        padding: 15px !important;
+    }
+
+    .notice-detail-con .info-right {
+        width: 100%;
+        justify-content: flex-start;
+        font-size: 12px;
+        border-top: 1px dashed #eee;
+        padding-top: 10px;
+    }
+
+    .notice-detail-con .detail-buttons {
+        padding: 15px;
+    }
+}
+
+body .scroll-top-btn {
+    all: unset;
+    /* 기존 모든 스타일 초기화 (매우 중요) */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: #333 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    z-index: 9999;
+
+    /* 애니메이션 관련 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* 상태 및 호버도 동일하게 body 추가 */
+body .scroll-top-btn.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}

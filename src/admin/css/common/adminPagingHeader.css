@@ -1,0 +1,100 @@
+/* adminPagingHeader.css */
+
+/* 어드민페이징의 헤더쪽 스타일(필터링, 검색) */
+
+.adminPaging-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 1vh;
+  padding-bottom: 1vh;
+  border-bottom: 1px solid #f1e2cc;
+  font-size: 14px;
+}
+
+/* 상태필터 스타일 */
+.adminPaging-header .status-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+  font-size: inherit;
+  color: #8a5a15;
+}
+
+.adminPaging-header .status-filter label {
+  font-weight: bold;
+}
+.adminPaging-header .status-filter select {
+  box-sizing: border-box;
+  padding: 0.5vw 1vw;
+  border: 1px solid #f1d3a3;
+  background-color: #ffffff;
+  color: #8a5a15;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.adminPaging-header .status-filter select:hover {
+  outline: none;
+  border-color: #ff8800;
+}
+
+/* 검색기능 스타일 */
+.adminPaging-header .searchBar {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.adminPaging-header .searchBar input {
+  box-sizing: border-box;
+  width: 250px;
+  height: 36px;
+  padding: 0 1.5vw;
+  border: 1px solid #f1d3a3;
+  font-size: inherit;
+  transition: all 0.2s;
+}
+
+.adminPaging-header .searchBar input:focus {
+  outline: none;
+  border-color: #ff8800;
+}
+
+/* 검색버튼 스타일 */
+.adminPaging-header .searchBar button {
+  box-sizing: border-box;
+  height: 36px;
+  padding: 0 2vw;
+  border: none;
+  background-color: #ff8800;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.adminPaging-header .searchBar button:hover {
+  background-color: #c8841f;
+}
+
+@media screen and (max-width:768px) {
+  .adminPaging-header{
+    font-size: 12px;
+  }
+.adminPaging-header .searchBar input {
+  width: 150px;
+}
+
+.adminPaging-header .status-filter select {
+  border-radius: 1vw;
+}
+.adminPaging-header .searchBar input {
+  border-radius: 1vw;
+}
+.adminPaging-header .searchBar button {
+  border-radius: 1vw;
+}
+}

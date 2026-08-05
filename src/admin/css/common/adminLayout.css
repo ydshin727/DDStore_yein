@@ -1,0 +1,19 @@
+/* 어드민페이지의 컨텐츠들 위치 조절 */
+.adminLayout{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.adminLayout-con{
+  width: calc(100% - 250px);
+  position: absolute;
+  right: 0;
+}
+
+@media screen and (max-width:1024px) {
+  .adminLayout-con{
+    width:100%;
+  }
+}

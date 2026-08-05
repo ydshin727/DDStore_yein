@@ -1,0 +1,217 @@
+/* yein - 추천 상품 모달 */
+
+.pm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(8px);
+  margin: 0;
+  padding: 0;
+}
+
+.pm-modal-content {
+  background-color: #ffffff;
+  width: 95%;
+  max-width: 30rem;
+  border-radius: 1.5rem;
+  padding: 2.5rem 1.5rem 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pmModalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pmModalPop {
+  from { opacity: 0; transform: scale(0.9) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* 상단 헤더 및 텍스트 영역 */
+.pm-modal-content .pm-modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.pm-modal-content .pm-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 0.6rem 0;
+  padding: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.pm-modal-content .pm-desc {
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 추천 상품 리스트 및 아이템 */
+.pm-modal-content .pm-recommend-list {
+  display: flex;
+  gap: 1.2rem;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+
+.pm-recommend-item {
+  flex: 1;
+  max-width: 10rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 1.2rem;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.pm-recommend-item:hover {
+  transform: translateY(-5px);
+  border-color: #ff7608;
+  box-shadow: 0 10px 20px rgba(255, 118, 8, 0.1);
+}
+
+.pm-recommend-item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+  background-color: #f8f8f8;
+}
+
+.pm-recommend-item .pm-item-name {
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  margin: 0 0 0.4rem 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pm-recommend-item .pm-item-price {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #ff7608;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* 하단 버튼 그룹 */
+.pm-modal-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.pm-modal-btns button {
+  width: 100%;
+  height: 3.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0.8rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.pm-modal-btns .pm-confirm-btn {
+  background-color: #ff7608;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 118, 8, 0.3);
+}
+
+.pm-modal-btns .pm-confirm-btn:hover {
+  filter: brightness(1.05);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 118, 8, 0.4);
+}
+
+.pm-modal-btns .pm-close-btn {
+  background-color: #f8f9fa;
+  color: #666;
+  border: 1px solid #eee;
+}
+
+.pm-modal-btns .pm-close-btn:hover {
+  background-color: #f1f3f5;
+  color: #222;
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+/* 반응형 레이아웃 (1024 / 768 전용) */
+@media screen and (max-width: 1024px) {
+  .pm-modal-content {
+    max-width: 25rem;
+    padding: 2.2rem 1.2rem;
+  }
+
+  .pm-modal-content .pm-recommend-list {
+    gap: 1rem;
+  }
+
+  .pm-recommend-item {
+    flex: 0 1 9.5rem;
+    max-width: 9.5rem;
+    padding: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pm-modal-content {
+    width: 90%;
+    max-width: 21rem;
+    padding: 1.8rem 1rem;
+  }
+
+  .pm-modal-content .pm-recommend-list {
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .pm-recommend-item {
+    flex: 0 0 8.5rem;
+    max-width: 8.5rem;
+    padding: 0.6rem;
+  }
+
+  .pm-modal-btns {
+    padding: 0 5px;
+  }
+
+  .pm-modal-btns button {
+    height: 2.8rem;
+    font-size: 0.9rem;
+  }
+}

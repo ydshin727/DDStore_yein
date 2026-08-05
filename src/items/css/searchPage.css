@@ -1,0 +1,149 @@
+.search-page {
+  width: 1200px;
+  margin: 60px auto;
+}
+
+.search-page h2 {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.search-page h2 span {
+  color: #ff6a00;
+}
+
+.search-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.search-list li {
+  text-align: center;
+}
+
+.search-list img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.search-list .name {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.search-list .price {
+  margin-top: 4px;
+  font-weight: bold;
+  color: #ff6a00;
+}
+
+.empty {
+  margin-top: 80px;
+  text-align: center;
+  color: #999;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 50px 0;
+}
+
+/* 공통 버튼 */
+.pagination button {
+  border: none;
+  background: none;
+  font-size: 14px;
+  color: #bdbdbd;
+  cursor: pointer;
+  padding: 4px 6px;
+}
+
+.pagination button.arrow {
+  font-size: 20px;  
+  font-weight: 500;
+  padding: 4px 10px;
+}
+
+
+.pagination button:hover:not(:disabled) {
+  color: #000;
+}
+
+/* 현재 페이지 */
+.pagination button.active {
+  color: #000;
+  font-weight: 600;
+}
+
+/* 비활성 (맨앞 / 맨뒤) */
+.pagination button:disabled {
+  color: #e0e0e0;
+  cursor: default;
+}
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+  .search-page {
+    width: 95%;       /* 좌우 여백 줄임 */
+    margin: 40px auto;
+  }
+
+  .search-list {
+    grid-template-columns: repeat(3, 1fr); /* 3열 */
+    gap: 20px;
+  }
+
+  .search-page h2 {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+  .search-page {
+    width: 95%;
+    margin: 30px auto;
+  }
+
+  .search-list {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2열 */ 
+    gap: 15px; 
+  }
+
+  .search-page h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .search-list .name {
+    font-size: 14px !important;
+  }
+
+  .search-list .price {
+    font-size: 15px !important;
+  }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+  .search-list {
+    grid-template-columns: 1fr; /* 1열 */
+    gap: 12px;
+  }
+
+  .search-page h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .search-list .name {
+    font-size: 12px;
+  }
+
+  .search-list .price {
+    font-size: 12px;
+  }
+}

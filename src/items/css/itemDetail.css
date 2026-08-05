@@ -1,0 +1,371 @@
+@import url('./common/reset.css');
+
+/* =========================
+  전체 레이아웃
+========================= */
+.orderBestDetail {
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  padding: 2vw;
+  background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+.orderBestDetail-con {
+  width: 100%;
+  max-width: 1400px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  overflow: visible; 
+}
+
+/* =========================
+  상품 이미지 + 정보
+========================= */
+.detail-con {
+  display: flex;
+  gap: 5vw;
+  padding: 2.5vw;
+  flex-shrink: 0;
+}
+
+.detail-con .left {
+  flex: 1.2;
+}
+
+.detail-con .left img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.detail-con .right {
+  flex: 1;
+}
+
+.detail-con .right ul {
+  display: flex;
+  flex-direction: column;
+  /* gap: 14px; */
+}
+
+.detail-con .right ul li {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-con .right ul li:last-child {
+  border-bottom: none;
+}
+
+.detail-con .right ul li span:first-child {
+  width: 100px;
+  font-weight: 600;
+  color: #666;
+}
+
+.detail-con .right ul li span:last-child {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+}
+
+.detail-con .right ul li:first-child span:last-child {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.detail-con .right ul li:nth-child(2) span:last-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* 수량 선택 */
+.span1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.span1 button {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.span1 button:hover {
+  background: #f2f2f2;
+}
+
+.span1 span {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 총 가격 */
+.detail-con .right ul li:nth-last-child(2) span:last-child {
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+}
+
+/* 버튼 영역 */
+.detail-con .right ul li:last-child {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.detail-con .right ul li:last-child button {
+  flex: 1;
+  height: 60px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.detail-con .right ul li:last-child button:first-child {
+  background: #fff;
+  border: 1px solid #ff8800;
+  color: #ff8800;
+}
+
+
+.detail-con .right ul li:last-child button:nth-child(2) {
+  background: #ff8800;
+  color: #fff;
+}
+
+.detail-con .right ul li:last-child button:nth-child(3) {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.detail-con .right ul li:last-child button:nth-child(3):hover {
+  background: #eee;
+}
+
+/* =========================
+  탭 버튼
+========================= */
+.detail-tabs {
+  position: sticky;
+  top: 90px; /* 👉 헤더 높이랑 맞춰야 함 */
+  z-index: 1100;
+
+  background: #fff;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+}
+
+.detail-tabs button {
+  flex: 1;
+  padding: 16px 0;
+  font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  position: relative;
+}
+
+.detail-tabs button.active {
+  color: #000;
+  font-weight: 600;
+}
+.detail-tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff9100; 
+  border-radius: 2px;
+}
+.detail-tabs button::after {
+  transition: all 0.3s ease;
+}
+/* =========================
+  상세 이미지 영역
+========================= */
+.detail-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 40px 20px;
+  border-top: 1px solid #eee;
+}
+
+.detail-image-section img {
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+  후기 영역
+========================= */
+.product-review-section {
+  flex-shrink: 0;
+  padding: 40px 20px;
+  border-top: 1px solid #eee;
+  background: #fff;
+  /* min-height: 40vh; */
+}
+.no-review {
+  min-height: 300px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+}
+ /* 탑버튼 */
+.scrollTopBtn {
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.scrollTopBtn:hover {
+  background: #474646;
+  color: #fff;
+  transform: translateY(-4px);
+}
+/* 옵션 영역 */
+.detail-con .right select {
+  width: 180px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* hover */
+.detail-con .right select:hover {
+  border-color: #999;
+}
+
+/* focus */
+.detail-con .right select:focus {
+  border-color: #111;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+/* 왼쪽 라벨 고정폭 */
+.detail-con .right ul li > span:first-child {
+  width: 90px;   /* 🔥 여기로 정렬 맞춤 */
+  font-weight: 500;
+}
+
+/* 오른쪽 내용 영역 */
+.detail-con .right ul li > span:last-child {
+  flex: 1;
+}
+.detail-con .right select {
+  width: 160px;
+}
+
+/* =========================
+  반응형
+========================= */
+@media (min-width: 1025px){
+  .detail-tabs{
+    top: 10%
+  }
+}
+@media (max-width: 768px) {
+  .detail-con {
+    flex-direction: column;
+  }
+  .orderBestDetail{
+    padding-top: 40px;
+  }
+  .orderBestDetail-con {
+    position: relative;
+  }
+  .detail-con .right ul li span:first-child {
+    width: 80px;
+  }
+
+  .detail-tabs {
+    gap: 10px;
+  }
+  .detail-tabs {
+    position: sticky;
+    top: 0px ;
+    z-index: 900;
+    background: #fff;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 16px;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s ease;
+  }
+  .detail-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  body.item-detail-page .mobile-category-bar {
+    display: none !important;
+  }
+  .detail-tabs.header-hide {
+    transform: translateY(0);     /* ✅ 헤더 없을 때 */
+  }
+
+  .detail-tabs.header-show {
+    transform: translateY(68px); /* ✅ 헤더 있을 때 */
+  }
+  .detail-tabs button {
+    flex: 1;
+    padding: 16px 0;
+    font-size: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #888;
+    position: relative;
+  }
+  .detail-tabs button.active::after {
+    height: 4px;
+  }
+}

@@ -1,0 +1,64 @@
+/* adminMain.css */
+
+/* 관리자페이지의 메인페이지(대시보드) 스타일 */
+
+.adminMain {
+  box-sizing: border-box;
+  padding: 2vh;
+  width: 100%;
+  height: 90vh;
+}
+
+.adminMain .adminMain-con {
+  margin: 0 auto;
+}
+
+.adminMain .adminMain-con>ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.adminMain .adminMain-con>ul>li {
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 2vw;
+  padding: 3vh;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 130px;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.adminMain .adminMain-con>ul>li:hover {
+  transform: translateY(-1vh);
+  border: 1px solid #ff8800;
+}
+
+.adminMain .adminMain-con>ul>li span:first-child {
+  color: #666;
+  font-weight: bold;
+}
+.adminMain .adminMain-con>ul>li span:last-child {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff8800;
+}
+
+@media screen and (max-width:1024px) {
+  .adminMain .adminMain-con>ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media screen and (max-width:768px) {
+  .adminMain .adminMain-con>ul{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+}

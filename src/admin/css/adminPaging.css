@@ -1,0 +1,198 @@
+/* adminPaging.css */
+
+/* 어드민페이지의 페이징 기능이 들어간 컴포넌트의 공통 스타일 */
+
+.adminPaging {
+  box-sizing: border-box;
+  padding: 2vw;
+  width: 100%;
+  min-height: 90vh;
+  background-color: #ffffff;
+}
+
+.adminPaging .adminPaging-con {
+  width: 100%;
+}
+
+/* 전체 리스트 */
+.adminPaging .adminPaging-con>ul {
+  box-sizing: border-box;
+  border: 1px solid #ff8800;
+  z-index: 1;
+}
+
+/* 공통 행 스타일 */
+.adminPaging .adminPaging-con>ul>li label,
+.adminPaging .adminPaging-con>ul>li:first-child{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  align-items: center;
+  box-sizing: border-box;
+  padding: 8px;
+  min-height: 20px;
+  border-bottom: 1px solid #ffe2c2;
+  font-size: 14px;
+}
+
+.adminPaging .adminPaging-con>ul>li:first-child {
+  background-color: #ff8800;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.adminPaging .adminPaging-con>ul>li span {
+  box-sizing: border-box;
+  padding: 1vh;
+  text-align: center;
+  word-break: break-word;
+}
+.adminPaging .adminPaging-con>ul>li .allCheck {
+  background-color: #e67600;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+.adminPaging .adminPaging-con>ul>li .allCheck:hover {
+  text-decoration: underline;
+  color: #ff8800;
+  background-color: #ffffff;
+}
+
+/* 데이터 행 */
+.adminPaging .adminPaging-con>ul>li:not(:first-child) {
+  background-color: #ffffff;
+  transition: all 0.2s;
+}
+
+/* hover 효과 */
+.adminPaging .adminPaging-con>ul>li:not(:first-child):hover
+ {
+background-color: #fff3e6;
+}
+/* 선택박스 효과 */
+.adminPaging .adminPaging-con>ul>li:not(:first-child).select{
+  background-color: #ffe2c0;
+}
+.adminPaging .adminPaging-con>ul .noData{
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 체크박스 */
+.adminPaging .adminPaging-con input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff8800;
+  cursor: pointer;
+}
+
+/* 상세보기 / 링크 스타일 */
+.adminPaging .adminPaging-con a {
+  z-index: 5;
+  color: #ff8800;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.adminPaging .adminPaging-con a:hover {
+  text-decoration: underline;
+  color: #e67600;
+}
+
+/* 상태 뱃지 */
+.adminPaging .adminPaging-con>ul>li .status-badge,
+.adminPaging .adminPaging-con>ul>li .method-badge {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #ff8800;
+  color: #ffffff;
+}
+
+/* select 박스 */
+.adminPaging .adminPaging-con>ul>li .status-select {
+  box-sizing: border-box;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid #ff8800;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.adminPaging .adminPaging-con>ul>li .status-select:focus {
+  outline: none;
+  border-color: #e67600;
+}
+/* 상품 이미지 셀 정렬 */
+.adminPaging .adminPaging-con>ul>li img {
+  box-sizing: border-box;
+  width: 60px;          /* 가로 크기 */
+  height: 60px;         /* 세로 크기 */
+  object-fit: cover;    /* 비율 유지 + 잘라내기 */
+  border-radius: 6px;
+  border: 1px solid #ffe2c2;
+  padding: 3px;
+  background-color: #ffffff;
+}
+
+/* 이미지가 들어있는 span 정렬 보정 */
+.adminPaging .adminPaging-con>ul>li img {
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width:1024px) {
+  .adminPaging .adminPaging-con>ul>li:first-child{
+    display: none;
+  }
+  .adminPaging .adminPaging-con>ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: 0px;
+    gap: 1vw;
+    border-radius: 0px;
+  }
+  .adminPaging .adminPaging-con>ul>li{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: #ff8800;
+    border-radius: 1vw;
+  }
+  .adminPaging .adminPaging-con>ul>li label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1vw;
+  }
+  .adminPaging .adminPaging-con>ul>li label .checkSpan{
+    display: none;
+  }
+  .adminPaging .adminPaging-con>ul>li span{
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width:768px) {
+  .adminPaging .adminPaging-con>ul{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .adminPaging .adminPaging-con>ul>li{
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: #ff8800;
+    border-radius: 1vw;
+  }
+}

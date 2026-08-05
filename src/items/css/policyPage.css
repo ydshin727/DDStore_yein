@@ -1,0 +1,51 @@
+.policy-page {
+  min-height: calc(100vh - 160px); /* 헤더+푸터 고려 */
+
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+.policy-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.policy-container h1 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.policy-box {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 30px;
+  line-height: 1.7;
+  font-size: 14px;
+  color: #555;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+.scrollTopBtn {
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.scrollTopBtn:hover {
+  background: #474646;
+  color: #fff;
+  transform: translateY(-4px);
+}

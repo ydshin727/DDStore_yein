@@ -1,0 +1,13 @@
+/* yein - 주문 내역 Layout */
+
+/* 레이아웃 전체 설정 */
+.payment-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 본문 영역 설정 */
+.payment-main {
+  flex: 1;
+}

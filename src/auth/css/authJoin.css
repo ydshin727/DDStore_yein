@@ -1,0 +1,157 @@
+/* authJoin.css */
+
+.authJoin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authJoin .authJoin-con {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+/* 이미지 설정 */
+.authJoin .authJoin-con>h1.logo {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+
+.authJoin .authJoin-con>h1.logo>a>img {
+  display: block;
+  width: 342.8px;
+  height: 134px;
+}
+
+.authJoin .authJoin-con>ul {
+  width: 500px;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vh;
+}
+
+.authJoin .authJoin-con>ul>li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* li요소 중 join input하는 부분만 설정 */
+.authJoin .authJoin-con>ul>li.join-input {
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #ff8800;
+  font-size: 0.8rem;
+}
+
+.authJoin .authJoin-con>ul>li>.front {
+  flex: 3;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.authJoin .authJoin-con>ul>li>.back {
+  flex: 7;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.authJoin .authJoin-con input {
+  display: block;
+  border: 0px;
+  box-sizing: border-box;
+  padding: 0px 10px;
+  height: 100%;
+  width: 100%;
+  font-size: inherit;
+}
+
+.authJoin .authJoin-con select {
+  display: block;
+  font-size: inherit;
+  display: block;
+  border: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  font-size: inherit;
+}
+
+/* .back 요소의 앞쪽에 컨텐츠 설정 */
+.authJoin .authJoin-con>ul>li>.back::after {
+  content: '|';
+  position: absolute;
+  z-index: 999;
+  top: -5px;
+  left: -10px;
+  color: #c0c0c0;
+}
+
+.authJoin .authJoin-con>ul .check {
+  font-size: 10px;
+  color: red;
+}
+.authJoin .authJoin-con>ul .check>span {
+  display: block;
+}
+
+/* 버튼구역 따로 지정하여 설정 */
+.authJoin .authJoin-con .button-area {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: 24px;
+  width: 500px;
+  display: flex;
+  gap: 0.5vw;
+}
+
+.authJoin .authJoin-con .button-area button {
+  width: 100%;
+  height: 40px;
+  display: block;
+  background-color: #ff8800;
+  border: 0px;
+  color: #ffffff;
+  border: 1px solid #ff8800;
+  transition: 0.2s all;
+}
+
+.authJoin .authJoin-con .button-area button:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #ff8800;
+}
+
+@media screen and (max-width:1024px) {
+
+  .authJoin .authJoin-con>ul {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .authJoin .authJoin-con>ul {
+    width: 300px;
+  }
+
+  .authJoin .authJoin-con .button-area {
+    width: 300px;
+  }
+
+  .authJoin .authJoin-con>ul {
+    height: 250px;
+  }
+}

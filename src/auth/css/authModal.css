@@ -1,0 +1,142 @@
+/* authModal.css */
+
+/* 계정 수정 모달창 스타일 */
+
+.authDetailModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  box-sizing: border-box;
+  padding: 4vw;
+}
+
+/* 닫기 버튼 스타일 */
+.authDetailModal .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1vh;
+  background-color: #ff8800;
+  transition: all 0.2s;
+}
+
+.authDetailModal .close:hover {
+  color: #ffffff;
+  background-color: #cf8e2f;
+}
+
+/* 모달 메인 스타일 */
+.authDetailModal-con {
+  box-sizing: border-box;
+  flex: 0 1 600px;
+  background: #ffffff;
+  border-radius: 2vw;
+  padding: 40px 35px;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.authDetailModal .authDetailModal-con li {
+  box-sizing: border-box;
+  padding: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 리스트 마지막(버튼) 빼고 밑 그림자 설정 */
+.authDetailModal .authDetailModal-con li:not(:last-child) {
+  box-shadow: 0px 2px 0px #ff8800;
+}
+
+.authDetailModal .authDetailModal-con h1 {
+  box-sizing: border-box;
+  padding-bottom: 2vh;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff8800;
+}
+
+/* 리스트의 span태그들 중 첫번째 요소 스타일 */
+.authDetailModal .authDetailModal-con li span:first-child {
+  width: 30%;
+  font-weight: bold;
+  color: #444;
+}
+
+/* 인풋필드 스타일 */
+.authDetailModal .authDetailModal-con input{
+  box-sizing: border-box;
+  width: 300px;
+  padding: 1vh 1vw;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.authDetailModal .authDetailModal-con input:focus{
+  border-color: #ff8800;
+}
+
+/* 버튼쪽 리스트 스타일 */
+.authDetailModal ul li:last-child {
+  box-sizing: border-box;
+  padding-top: 2vh;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+.authDetailModal button {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 1vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+.authDetailModal button {
+  box-sizing: border-box;
+  background-color: #ff8800;
+  color: #fff;
+  border: 1px solid #ff8800;
+}
+
+.authDetailModal button:hover {
+  background-color: #fff;
+  color: #ff8800;
+}
+
+@media screen and (max-width:1024px) {
+  .authDetailModal-con {
+  width: 400px;
+}
+  .authDetailModal .authDetailModal-con input{
+  width: 250px;
+  }
+}
+@media screen and (max-width:768px) {
+  .authDetailModal-con {
+  width: 350px;
+}
+.authDetailModal .authDetailModal-con input{
+  width: 200px;
+  }
+}

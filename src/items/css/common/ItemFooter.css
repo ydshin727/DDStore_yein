@@ -1,0 +1,105 @@
+
+.footer {
+  width: 100%;
+  background-color: #faf8ec;
+  padding: 30px 80px 20px; 
+  box-sizing: border-box;
+  white-space: normal; 
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* 왼쪽, 가운데, 오른쪽 공통적으로 line-height를 조절해 */
+.footer-left {
+  flex: 1;
+  text-align: left;
+  font-size: 13px; 
+  line-height: 1.6; 
+}
+
+.footer-center {
+  flex: 2;
+  text-align: center; 
+  font-size: 13px;
+  line-height: 1.6; 
+}
+
+.footer-right {
+  flex: 1;
+  text-align: right;   
+  font-size: 12px;
+  line-height: 1.6; 
+}
+
+/* 하단 카피라이트 영역 */
+.footer-bottom {
+  text-align: center;
+
+  margin-top: 20px; 
+  font-size: 11px;
+  color: #999;
+  line-height: 1.6;
+}
+.footer-time .lunch {
+  display: block;
+}
+.footer-right li a:hover{
+ text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 16px 16px; 
+  }
+
+  .footer-inner {
+
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .footer-left{
+    text-align: left;
+  }
+  .footer-center
+  {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .footer-right {
+    text-align: right;
+  }
+  .footer-left,
+  .footer-center {
+    font-size: 1.8vw; 
+    line-height: 1.4; 
+  }
+
+  .footer-right {
+    font-size: 1.8vw;
+    line-height: 1.4;
+  }
+
+  .footer-bottom {
+    font-size: 10px;
+    margin-top: 10px;
+}
+.footer-right li {
+  margin-bottom: 4px;
+}
+
+.footer-right li a {
+  display: inline-block;
+  padding: 2px 0; 
+}
+.footer-center {
+  line-height: 1.3;
+}
+}

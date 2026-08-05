@@ -1,0 +1,464 @@
+/* ==========================================================================
+   1. 모달 오버레이 및 기본 컨테이너
+   ========================================================================== */
+.community-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(3px);
+}
+
+.community-modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    max-height: 85vh;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    animation: modal-pop 0.3s ease-out;
+}
+
+@keyframes modal-pop {
+    from {
+        transform: scale(0.95) translateY(10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   2. 모달 헤더 & 바디
+   ========================================================================== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background-color: #fff;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.modal-header h2 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ff8800;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+/* 세로스크롤만,가로스크롤X */
+.modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex: 1;
+    box-sizing: border-box;
+}
+
+/* 스크롤바 디자인 */
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+/* ==========================================================================
+   3. 모달 공통 테이블 (가로 스크롤 방지 핵심)
+   ========================================================================== */
+.modal-table-container,
+.history-table-wrapper {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.history-table-wrapper {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    table-layout: fixed;
+}
+
+.modal-table th {
+    background-color: #f9f9f9;
+    padding: 12px 8px;
+    border-bottom: 2px solid #eee;
+    font-weight: 700;
+    color: #555;
+    text-align: center;
+}
+
+.modal-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal-title-cell {
+    text-align: left !important;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.modal-title-cell:hover {
+    color: #ff8800;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. 관리자용 유저 활동 제한 폼 (Admin Restrict)
+   ========================================================================== */
+.restrict-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    font-weight: 700;
+    font-size: 14px;
+    color: #555;
+}
+
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.input-group select:focus,
+.input-group textarea:focus {
+    border-color: #ff8800;
+}
+
+.modal-btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.modal-submit-btn {
+    flex: 2;
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 15px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.modal-submit-btn:hover {
+    background-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+.modal-lift-btn {
+    flex: 1;
+    background-color: #f9f9f9;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.modal-lift-btn:hover {
+    background-color: #eee;
+}
+
+/* ==========================================================================
+   5. 회원 등급 정보 (Profile & Grade View)
+   ========================================================================== */
+.grade-view-container {
+    text-align: center;
+    padding: 10px 0 20px 0;
+}
+
+.grade-view-container .modal-close {
+    background-color: #ff8800;
+    color: #fff;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 136, 0, 0.2);
+}
+
+.grade-card {
+    background: #fffaf5;
+    border: 1px solid #ffeedd;
+    border-radius: 16px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+/* 프로필 이미지 & 반짝임 애니메이션 */
+.profile-image-wrapper {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #eee;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    padding: 5px;
+}
+
+/* 💡 통합된 관리자/VIP 광채 효과 */
+.admin-security-effect {
+    border-color: #ff8800;
+    box-shadow: 0 0 15px rgba(255, 136, 0, 0.4);
+    animation: admin-border-pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes admin-border-pulse {
+
+    0%,
+    100% {
+        border-color: #ff8800;
+        box-shadow: 0 0 10px rgba(255, 136, 0, 0.3);
+    }
+
+    50% {
+        border-color: #ffb84d;
+        box-shadow: 0 0 25px rgba(255, 136, 0, 0.6);
+    }
+}
+
+.grade-badge-text {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #555;
+}
+
+.grade-badge-text.grade-vip,
+.grade-badge-text.VIP {
+    color: #d4af37;
+}
+
+.grade-badge-text.grade-gold,
+.grade-badge-text.GOLD {
+    color: #c5a000;
+}
+
+.grade-badge-text.grade-admin,
+.grade-badge-text.ROLE_ADMIN {
+    color: #ff8800;
+}
+
+.spent-info {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px dashed #ffcc99;
+    font-size: 14px;
+}
+
+.spent-info strong {
+    color: #ff8800;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   6. 상품 후기 카드 (Review List)
+   ========================================================================== */
+.simple-review-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.simple-review-card:hover {
+    border-color: #ff8800;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.review-user {
+    font-weight: 700;
+    color: #333;
+}
+
+.review-stars {
+    color: #ff8800;
+    font-weight: 800;
+}
+
+.review-content-box {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.review-footer {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: #999;
+}
+
+/* ==========================================================================
+   7. 반응형 최적화 (가로 스크롤 방지 & UI 축소)
+   ========================================================================== */
+
+/* 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+    .community-modal-content {
+        max-width: 550px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .community-modal-content {
+        width: 95%;
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 12px;
+    }
+
+    .modal-header {
+        padding: 15px 20px;
+    }
+
+    .modal-header h2 {
+        font-size: 1.05rem;
+    }
+
+    .close-btn {
+        font-size: 24px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+
+    .modal-table {
+        font-size: 12px;
+    }
+
+    .modal-table th:nth-child(1),
+    .modal-table td:nth-child(1) {
+        width: 40px;
+    }
+
+    /* 번호 */
+
+    /* 모바일에서는 '작성일' 등 덜 중요한 3~4번째 열을 숨겨 가독성 확보 (필요시 조절) */
+    .modal-table th:nth-child(4),
+    .modal-table td:nth-child(4) {
+        display: none;
+    }
+
+    .profile-image-wrapper {
+        width: 90px;
+        height: 90px;
+    }
+
+    .modal-btn-group {
+        flex-direction: column;
+    }
+
+    /* 모바일 버튼 세로 배치 */
+    .modal-submit-btn,
+    .modal-lift-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+}

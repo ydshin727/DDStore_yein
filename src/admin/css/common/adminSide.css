@@ -1,0 +1,56 @@
+/* adminSide.css */
+
+/* 전체 사이드바 */
+.adminSide{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid #ff8800;
+}
+/* 내부 컨테이너 */
+.adminSide .adminSide-con {
+  flex: 0 1 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 로고 이미지 스타일 */
+.adminSide .adminSide-con>ul>li>h1.logo a img{
+  display: block;
+  width: 200px;
+  height: 100px;
+}
+.adminSide .adminSide-con>ul>li a {
+  box-sizing: border-box;
+  display: block;
+  padding: 2vh;
+  color: #ff8800;
+  text-decoration: none;
+  font-weight: block;
+  transition: all 0.2s;
+}
+
+.adminSide ul li:not(:first-child) a:hover {
+  background-color: #ff8800;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.adminSide ul li {
+  box-sizing: border-box;
+  border-bottom: 1px solid #ff8800;
+}
+
+@media screen and (max-width:1024px) {
+  .adminSide{
+    display: none;
+  }
+}

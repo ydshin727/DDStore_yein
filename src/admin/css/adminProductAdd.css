@@ -1,0 +1,118 @@
+/* adminProductAdd.css */
+
+/* 관리자페이지 제품추가 스타일 */
+
+.adminProductAdd {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 90vh;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adminProductAdd .adminProductAdd-con {
+  box-sizing: border-box;
+  width: 700px;
+  background-color: #ffffff;
+  border-radius: 2vw;
+  padding: 3vh;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.adminProductAdd .adminProductAdd-con li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+/* 제목 스타일 */
+.adminProductAdd .adminProductAdd-con h1 {
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  color: #ff8800;
+}
+
+/* 각 리스트 첫번째 span의 스타일 */
+.adminProductAdd .adminProductAdd-con li span:first-child,
+.adminProductAdd .adminProductAdd-con li label {
+  font-weight: bold;
+  color: #444;
+}
+
+/* 각 리스트의 인풋, 셀렉트 스타일 */
+.adminProductAdd .adminProductAdd-con input,
+.adminProductAdd .adminProductAdd-con select {
+  box-sizing: border-box;
+  width: 240px;
+  padding: 10px 16px;
+  border-radius: 1vw;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.adminProductAdd .adminProductAdd-con input:focus,
+.adminProductAdd .adminProductAdd-con select:focus {
+  border-color: #ff8800;
+}
+
+/* 이미지 스타일(미리보기 이미지) */
+.adminProductAdd .adminProductAdd-con img {
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  border-radius: 1vw;
+  padding: 10px;
+}
+
+/* 마지막 추가버튼만 가운데설정 */
+.adminProductAdd .adminProductAdd-con li:last-child {
+  justify-content: center;
+}
+
+/* 추가버튼의 스타일 */
+.adminProductAdd .adminProductAdd-con button {
+  box-sizing: border-box;
+  padding: 1vw 3vh;
+  background-color: #ff8800;
+  color: #fff;
+  border: none;
+  border-radius: 1vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.adminProductAdd .adminProductAdd-con button:hover {
+  background-color: #cf8e2f;
+}
+
+@media screen and (max-width:1024px) {
+  .adminProductAdd .adminProductAdd-con img {
+  width: 240px;
+  height: 240px;
+}
+.adminProductAdd .adminProductAdd-con {
+  width: 600px;
+}
+
+}
+@media screen and (max-width:768px) {
+  .adminProductAdd .adminProductAdd-con img {
+  width: 160px;
+  height: 160px;
+}
+.adminProductAdd .adminProductAdd-con {
+  width: 350px;
+}
+.adminProductAdd .adminProductAdd-con input,
+.adminProductAdd .adminProductAdd-con select {
+  width: 150px;
+}
+
+}

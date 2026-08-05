@@ -1,0 +1,286 @@
+@import url(./common/reset.css);
+
+.comment-page-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: 'Pretendard', sans-serif;
+  color: #333;
+  box-sizing: border-box;
+}
+
+.comment-page-container h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 30px;
+  border-left: 6px solid #ff8800;
+  padding-left: 15px;
+}
+
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.product-review-group {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px 40px;
+  margin-bottom: 35px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+
+  transition: transform 0.12s ease-out;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+.product-review-group:hover {
+  transform: translateY(-4px);
+}
+
+.product-review-group h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.product-link {
+  color: #222;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  display: inline-block;
+  transition: transform 0.12s ease-out, color 0.12s ease-out;
+
+}
+
+
+.product-link:hover {
+  color: #ff7a00;
+  transition: transform 0.2s ease;
+}
+
+.product-review-group ul {
+  list-style: none;
+  padding-left: 0;
+
+}
+
+.review-item {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.review-header h4 {
+  font-size: 16px;
+}
+
+.review-header .rating {
+  background: #fff4e5;
+  color: #f39c12;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.review-comment {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  padding-left: 6px;
+}
+
+.review-date {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: #999;
+}
+
+.product-image-wrap {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 14px;
+  display: block;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.more-review {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.more-review:hover {
+  color: #ff7a00;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 50px 0;
+  font-size: 14px;
+}
+
+.pagination button {
+  border: none;
+  background: none;
+
+  min-width: 32px;
+  height: 32px;
+
+  font-size: 14px;
+  color: #bdbdbd;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  padding: 0;
+}
+
+.pagination button.arrow {
+  font-size: 22px;
+}
+
+.pagination button:hover:not(:disabled) {
+  color: #000;
+}
+
+.pagination button.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.pagination button:disabled {
+  color: #e0e0e0;
+  cursor: default;
+}
+
+.review-sort {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.review-sort select {
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .comment-page-container {
+    margin: 40px auto;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .comment-page-container {
+    /* [수정] 상단 마진을 80px로 늘려 헤더 가림 방지 및 위치 통일 */
+    margin: 30px auto !important;
+    padding: 0 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. 제목 h2 높이 및 스타일 고정 */
+  .comment-page-container h2 {
+   font-size: 20px auto;
+  }
+
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .product-review-group {
+    padding: 16px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  .product-image-wrap {
+    height: 180px;
+  }
+
+  .product-review-group h3 {
+    font-size: 2.5vw;
+  }
+
+  .review-header h4 {
+    font-size: 2.2vw;
+  }
+
+  .review-comment {
+    font-size: 2.2vw;
+  }
+
+  .review-date {
+    font-size: 2vw;
+  }
+
+  .review-item {
+    padding: 12px;
+  }
+
+  .more-review {
+    font-size: 0.8rem;
+  }
+
+  .review-sort {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .review-sort select {
+    font-size: 2vw;
+    padding: 4px 8px;
+    height: 40px;
+    /* 박스 높이 */
+    width: 120px;
+    /* 박스 넓이 */
+  }
+
+  .view-all-reviews {
+    font-size: 18px;
+  }
+}

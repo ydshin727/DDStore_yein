@@ -1,0 +1,192 @@
+/* 전체 */
+.brand {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.story-header {
+  text-align: center;
+  margin: 80px 0 40px;
+}
+
+.story-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #686363;
+  margin-bottom: 12px;
+}
+
+.story-header .divider {
+  width: 80%;
+  height: 2px;
+  background-color: #aaa;
+  margin: 0 auto;
+}
+/* 🔥 히어로 */
+.brand-hero {
+  position: relative; /* 텍스트 절대 위치 기준 */
+  margin-top: 100px;
+  max-width: 780px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.brand-hero .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.hero-text p {
+  margin-top: 10px;
+}
+
+/* 🔥 텍스트 */
+.brand-content {
+  margin: 60px 0;
+  padding: 0 20px;
+}
+
+.brand-content h2 {
+  color: #ff6a00;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.quote {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.desc {
+  line-height: 1.6;
+  color: #555;
+}
+
+
+/* 기본 상태 (숨김) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brand-bottom {
+  padding: 60px 20px;
+}
+
+/* 상단 텍스트 */
+.bottom-text-top h3 {
+  color: #ff6a00;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  text-align: right;
+}
+
+/* 이미지 */
+.bottom-image img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  
+}
+
+/* 설명 */
+.bottom-desc {
+  max-width: 900px;
+  margin: 30px auto;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.bottom-desc strong {
+  font-weight: 700;
+}
+
+/* 버튼 */
+.bottom-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.bottom-btn button {
+  background: #ff6a00;
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bottom-btn button:hover {
+  background: #e55d00;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .hero-text {
+    bottom: 20px;
+    right: 20px;
+    max-width: 90%;
+    text-align: right;
+  }
+
+  .hero-text h1 {
+    font-size: 4vw;
+  }
+
+  .hero-text p {
+    font-size: 3vw;
+  }
+
+  .brand-content h2 {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .bottom-text-top h3 {
+    font-size:  3vw;
+  }
+
+  .bottom-desc {
+    font-size:  2.5vw;
+    line-height: 1.6;
+  }
+
+  .bottom-btn button {
+    padding: 10px 25px;
+    font-size: 2.5vw;
+  }
+  .quote{
+    font-size: 2.5vw;
+    padding: 30px 0;
+  }
+  .desc {
+    font-size: 2.5vw;
+  }
+}

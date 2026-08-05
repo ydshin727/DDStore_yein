@@ -1,0 +1,177 @@
+/* adminDetailModal.css */
+
+/* 관리자페이지의 모달창 스타일 */
+
+.adminDetailModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  box-sizing: border-box;
+  padding: 3vw;
+}
+
+.adminDetailModal .adminDetailModal-con {
+  box-sizing: border-box;
+  flex: 0 1 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 2vw;
+  padding: 3vw;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.adminDetailModal .adminDetailModal-con ul{
+  width: 100%;
+  height: 100%;
+}
+
+/* 닫기 버튼 */
+.adminDetailModal .adminDetailModal-con .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 1vh;
+  background-color: #ff8800;
+  transition: all 0.2s;
+}
+
+.adminDetailModal .adminDetailModal-con .close:hover {
+  color: #ffffff;
+  background-color: #cf8e2f;
+}
+
+.adminDetailModal .adminDetailModal-con li {
+  box-sizing: border-box;
+  padding: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adminDetailModal .adminDetailModal-con li:not(:last-child) {
+  border-bottom: 1px solid #ff8800;
+}
+
+.adminDetailModal .adminDetailModal-con h1 {
+  box-sizing: border-box;
+  padding-bottom: 2vh;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff8800;
+}
+
+.adminDetailModal .adminDetailModal-con li span:first-child {
+  width: 30%;
+  font-weight: bold;
+  color: #444;
+}
+.adminDetailModal .adminDetailModal-con li span:last-child {
+  text-align: right;
+}
+
+/* input, select 공통 스타일 */
+.adminDetailModal .adminDetailModal-con ul li input,
+.adminDetailModal .adminDetailModal-con ul li select {
+  box-sizing: border-box;
+  width: 250px;
+  padding: 1vh 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.adminDetailModal .adminDetailModal-con input:focus,
+.adminDetailModal .adminDetailModal-con select:focus {
+  border-color: #ff8800;
+}
+
+/* 인풋필드 중 체크박스의 스타일 */
+.adminDetailModal .adminDetailModal-con input[type="checkbox"] {
+  width: auto;
+  transform: scale(1.4);
+  accent-color: #ff8800;
+}
+
+/* 이미지(상품상세정보시 나오는 이미지 스타일) */
+.adminDetailModal .adminDetailModal-con img {
+  /* 이미지를 중간에 놓기 위해 width크기를 100%로 설정 */
+  width: 100%;
+  height: 260px;
+  /* 이미지의 사이즈를 맞추기  */
+  object-fit: contain;
+}
+
+/* 버튼쪽 리스트 스타일 */
+.adminDetailModal .adminDetailModal-con ul li:last-child {
+  box-sizing: border-box;
+  padding-top: 3vh;
+  justify-content: center;
+  gap: 3vw;
+}
+.adminDetailModal .adminDetailModal-con ul li:last-child select{
+  width: auto;
+}
+
+/* 버튼 스타일 */
+.adminDetailModal .adminDetailModal-con button {
+  box-sizing: border-box;
+  padding: 16px 48px;
+  border-radius: 1vw;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #ff8800;
+  color: white;
+  border: 1px solid #ff8800;
+  transition: 0.2s;
+}
+
+.adminDetailModal .adminDetailModal-con button:hover {
+  background-color: #ffffff;
+  color: #ff8800;
+}
+
+
+@media screen and (max-width:1024px) {
+  .adminDetailModal .adminDetailModal-con {
+    width: 450px;
+  }
+
+  .adminDetailModal .adminDetailModal-con input,
+  .adminDetailModal .adminDetailModal-con select {
+    width: 300px;
+  }
+  .adminDetailModal .adminDetailModal-con img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .adminDetailModal .adminDetailModal-con {
+    width: 400px;
+  }
+
+  .adminDetailModal .adminDetailModal-con>span>input,
+  .adminDetailModal .adminDetailModal-con>span>select {
+    width: 250px;
+  }
+  .adminDetailModal .adminDetailModal-con img {
+    height: 140px;
+  }
+}

@@ -1,0 +1,74 @@
+/* .bannerContainer {
+  width: 100%;
+  aspect-ratio: 16 / 5; 
+  overflow: hidden;
+} */
+.bannerContainer img {
+  width: 100%;
+  height: 400px; 
+  object-fit: cover;
+  display: block;
+}
+
+/* pagination 위치 */
+.swiper-pagination {
+  bottom: 20px !important;
+}
+
+/* 좌우 화살표 색상 */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #cfbfbf;
+
+}
+.swiper-button-prev:hover{
+  color: rgb(100, 92, 92);
+}
+.swiper-button-next:hover{
+  color: rgb(100, 92, 92);
+}
+.banner-con{
+  width: 100%;
+  height: 400px;
+
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+
+  background-color: #eaf4ff; 
+}
+.banner-con img {
+  cursor: pointer;
+}
+
+/* 전체 페이지네이션 위치 */
+.bannerContainer .swiper-pagination {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 3px; /* 바 사이 간격 */
+}
+
+/* 각 슬라이드 바 기본 스타일 */
+.bannerContainer .swiper-pagination-bullet {
+  width: 5px;       
+  height: 5px;      
+  background: rgba(134, 119, 119, 0.4); 
+  border-radius: 4px; 
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+/* 활성화된 슬라이드 바 */
+.bannerContainer .swiper-pagination-bullet-active {
+  background: #202020; 
+  width: 25px;         
+  height: 5px;          
+  border-radius: 4px;   
+}
+
+@media (max-width: 950px) {
+  .bannerContainer img {
+    height: 200px;
+  }
+}
+

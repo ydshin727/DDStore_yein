@@ -1,0 +1,588 @@
+/* ==========================================================================
+   1. 전체 레이아웃 및 타이틀
+   ========================================================================== */
+.orderStore {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.orderStore .orderstore-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 30px;
+    border-left: 6px solid #ff8800;
+    padding-left: 15px;
+}
+
+/* ==========================================================================
+   2. 상단 헤더 (검색바 & 등록 버튼) - Sticky 고정 적용
+   ========================================================================== */
+.orderStore .store-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    background-color: #ffffff;
+    /* 스크롤 시 배후 내용이 보이지 않게 흰색 배경 필수 */
+
+    position: sticky;
+    z-index: 997;
+    /* 커뮤니티 헤더(998)보다 낮고 본문보다 높게 설정 */
+    transition: top 0.3s ease;
+    /* 헤더가 사라지고 나타날 때 부드럽게 이동 */
+}
+
+/* PC 스크롤 위치 (메인 헤더 + 커뮤니티 헤더) */
+.orderStore .store-filter-bar.with-header {
+    top: calc(10vh + 50px);
+    /* 커뮤니티 헤더바 바로 밑 */
+}
+
+.orderStore .store-filter-bar.no-header {
+    top: 50px;
+    /* 메인헤더 사라졌을 때 커뮤니티 헤더 위치 */
+}
+
+/* 검색창을 감싸는 div가 빈 공간을 차지하도록 설정 */
+.search-filter {
+    flex: 1;
+    min-width: 0;
+}
+
+.store-search-input {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.store-search-input:focus {
+    border-color: #ff8800;
+}
+
+/* 신규 매장 등록 버튼 */
+.write-btn {
+    background-color: #ff8800;
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+    white-space: nowrap;
+    /* 글자 줄바꿈 방지 */
+    flex-shrink: 0;
+    /* 버튼 크기 찌그러짐 방지 */
+}
+
+.write-btn:hover {
+    background-color: #e67a00;
+}
+
+/* ==========================================================================
+   3. 메인 컨텐츠 컨테이너
+   ========================================================================== */
+.orderStore-con {
+    display: flex;
+    height: 600px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ==========================================================================
+   4. 왼쪽 사이드바 (너비 완전 고정)
+   ========================================================================== */
+.store-sidebar {
+    width: 380px;
+    min-width: 380px;
+    max-width: 380px;
+    flex: 0 0 380px;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.list-inner {
+    overflow-y: scroll;
+    flex: 1;
+}
+
+/* ==========================================================================
+   5. 매장 정보 카드
+   ========================================================================== */
+.store-card {
+    position: relative;
+    padding: 15px 20px;
+    padding-right: 100px;
+    border-bottom: 1px solid #f2f2f2;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    transition: background 0.2s;
+}
+
+.store-card:hover {
+    background-color: #fff9f2;
+}
+
+.store-card.active {
+    background-color: #fff4e6;
+    border-left: 5px solid #ff8800;
+}
+
+/* 매장명 및 헤더 */
+.info-header {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.info-header h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 800;
+    color: #333;
+    line-height: 1.2;
+    flex: 1;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.store-card.active h3 {
+    color: #ff8800;
+}
+
+.btn-dir {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 80px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff8800;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.btn-dir:hover {
+    background-color: #e67a00;
+}
+
+/* 주소 및 전화번호 */
+.store-card .info p,
+.store-card .info .tel {
+    margin: 0;
+    padding: 1px 0;
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    line-height: 1.3;
+    display: block;
+    word-break: keep-all;
+}
+
+.store-card .info .tel {
+    color: #999;
+    margin-top: 2px;
+}
+
+/* 관리자용 수정/삭제 버튼 */
+.admin-btns {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+}
+
+.admin-btns button {
+    flex: 1;
+    padding: 6px 0;
+    font-size: 11px;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #888;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.admin-btns button:hover {
+    border-color: #ff8800;
+    color: #ff8800;
+}
+
+.actions {
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    width: 80px;
+    z-index: 10;
+}
+
+/* ==========================================================================
+   6. 오른쪽 지도 영역
+   ========================================================================== */
+.map-section {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    background-color: #eee;
+}
+
+.map-container,
+.map-section>div {
+    width: 100%;
+    height: 100%;
+}
+
+.map-overlay-info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 2px solid #ff8800;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+}
+
+.map-overlay-info strong {
+    display: block;
+    font-size: 15px;
+    color: #ff8800;
+    margin-bottom: 4px;
+}
+
+.map-overlay-info p {
+    font-size: 12px;
+    color: #555;
+    margin: 0;
+}
+
+/* 검색 결과 없음 컨테이너 */
+.no-result-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.no-result-content {
+    max-width: 300px;
+}
+
+/* 돋보기 아이콘 애니메이션 */
+.search-icon-wrapper {
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.search-icon {
+    font-size: 54px;
+    display: inline-block;
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* 문구 스타일 */
+.no-result-content h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.no-result-content p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    word-break: keep-all;
+}
+
+.no-result-content p strong {
+    color: #ff8800;
+    font-weight: 700;
+}
+
+/* 검색어 초기화 버튼 */
+.reset-search-btn {
+    background: #fff;
+    color: #ff8800;
+    border: 1.5px solid #ff8800;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reset-search-btn:hover {
+    background: #ff8800;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 136, 0, 0.2);
+}
+
+/* 둥실둥실 애니메이션 */
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+}
+
+
+
+/* ==========================================================================
+   7. 화면 맨 위로 스크롤 (Top Button)
+   ========================================================================== */
+/* body를 붙여 우선순위를 높임 */
+body .scroll-top-btn {
+    all: unset;
+    /* 기존 모든 스타일 초기화 (매우 중요) */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: #333 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    z-index: 9999;
+
+    /* 애니메이션 관련 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* 상태 및 호버도 동일하게 body 추가 */
+body .scroll-top-btn.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+
+/* ==========================================================================
+   8. 반응형 디자인 (1024px 태블릿 해상도)
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+    .orderStore {
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .orderstore .orderstore-title {
+        font-size: 30px;
+        margin-bottom: 25px;
+        padding-left: 12px;
+        border-left: 5px solid #ff8800;
+    }
+
+
+    .orderStore .orderStore-con {
+        flex-direction: column;
+        height: auto;
+        min-height: 600px;
+    }
+
+    .orderStore .store-filter-bar.with-header {
+        /* 모바일 메인헤더(70px) + 커뮤니티헤더(약 40px) */
+        top: 127px !important;
+    }
+
+    /* 지도 영역 */
+    .orderStore .map-section {
+        flex: none;
+        height: 350px;
+        width: 100%;
+        order: 1;
+        position: relative;
+        /* 필터바가 sticky이므로 지도는 그 아래 자연스럽게 위치함 */
+    }
+
+    /* 🚨 지도 위 정보창 (오른쪽 아래 콤팩트 고정) */
+    .orderStore .map-overlay-info {
+        position: absolute;
+        bottom: 15px;
+        /* 하단 여백 축소 */
+        right: 15px;
+        /* 왼쪽(left) 대신 오른쪽(right)으로 고정 */
+        left: auto;
+        /* 기존 left 값 초기화 */
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 8px 12px;
+        /* 콤팩트하게 패딩 축소 */
+        border-radius: 8px;
+        border: 2px solid #ff8800;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 200px;
+        /* 너무 넓어지지 않게 제한 */
+    }
+
+    .orderStore .map-overlay-info strong {
+        font-size: 14px;
+        /* 글자 크기 살짝 축소 */
+        margin-bottom: 2px;
+    }
+
+    .orderStore .map-overlay-info p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    /* 목록 영역 */
+    .orderStore .store-sidebar {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        flex: none;
+        height: 400px;
+        overflow-y: auto;
+        border-top: 1px solid #ddd;
+        order: 2;
+        border-right: none;
+    }
+
+    .orderStore .store-card {
+        padding: 12px 15px;
+        padding-right: 85px;
+    }
+
+    .orderStore .btn-dir {
+        top: 12px;
+        right: 15px;
+    }
+
+    /* 사이드바좁을꺼 대비 검색결과없음 창 */
+    .no-result-container {
+        padding: 40px 15px;
+    }
+
+    .search-icon {
+        font-size: 40px;
+    }
+
+    .no-result-content h3 {
+        font-size: 17px;
+    }
+}
+
+/* ==========================================================================
+   9. 반응형 디자인 (768px 모바일 해상도)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .orderStore {
+        margin: 30px auto 30px auto !important; 
+        padding: 0 15px !important;
+    }
+   .orderStore .orderstore-title {
+        font-size: 30px !important; /* 모바일 글씨 크기 */
+        margin-top: 0 !important;   /* 부모 여백에 딱 붙도록 고정 */
+        margin-bottom: 15px !important; /* 제목과 검색바 사이의 간격 */
+        padding-top: 0 !important;
+        border-left-width: 6px !important; /* 주황색 바 두께 축소 */
+    }
+
+    /* 모바일헤더 한줄처리 */
+    .orderStore .store-filter-bar {
+        padding: 10px 0;
+        gap: 8px;
+    }
+
+    /* 모바일 스크롤 위치 보정 */
+    .orderStore .store-filter-bar.with-header {
+        /* 모바일 메인헤더(70px) + 커뮤니티헤더(약 40px) */
+        top: 150px !important;
+    }
+
+    .orderStore .store-filter-bar.no-header {
+        /* 메인헤더 숨김 시 커뮤니티헤더 높이만큼만 띄움 */
+        top: 40px !important;
+    }
+
+    /* 입력창이 공간 꽉 채움 */
+    .orderStore .store-search-input {
+        max-width: 100%;
+        font-size: 13px;
+    }
+
+    /* 등록버튼은 오른쪽에서 모양 유지 */
+    .write-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    /* Top 버튼 모바일 축소 */
+    .scroll-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .btn-dir,
+    .actions {
+        width: 70px;
+        /* 모바일에서는 살짝 줄임 */
+        right: 15px;
+    }
+
+    .btn-dir {
+        top: 12px;
+    }
+
+    .actions {
+        top: 48px;
+    }
+}

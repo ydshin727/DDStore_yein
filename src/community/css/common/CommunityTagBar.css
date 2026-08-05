@@ -1,0 +1,124 @@
+/* [공통] 필터 바 전체 컨테이너 */
+.community-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px; /* 패딩 축소 */
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* 태그 및 검색 조건 선택창 */
+.community-tag-group select,
+.community-search-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+  min-width: 110px;
+  transition: border-color 0.2s;
+}
+
+.community-tag-group select:focus,
+.community-search-group select:focus {
+  border-color: #ff8800;
+}
+
+/* 검색어 입력 박스 컨테이너 */
+.community-searchInput-box {
+  display: flex;
+  flex: 1;
+  gap: 6px;
+}
+
+.community-searchInput-box input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.community-searchInput-box input:focus {
+  border-color: #ff8800;
+}
+
+/* 검색 버튼 */
+.search-btn {
+  padding: 8px 16px;
+  background-color: #ff8800;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   반응형 최적화 (가독성 유지 및 크기 축소)
+   ========================================================================== */
+
+/* 1. 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  .community-filter-group {
+    padding: 12px;
+    gap: 8px;
+  }
+}
+
+/* 2. 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .community-filter-group {
+    display: grid; /* 💡 Flex 대신 Grid로 레이아웃 고정 */
+    grid-template-columns: 1fr 1fr; /* 💡 셀렉트 박스 두 개를 한 줄에 */
+    gap: 8px;
+    padding: 10px;
+  }
+
+  /* 셀렉트 박스 그룹 */
+  .community-tag-group, 
+  .community-search-group {
+    width: 100%;
+  }
+
+  .community-tag-group select,
+  .community-search-group select {
+    width: 100%;
+    min-width: 0; /* 💡 고정 너비 해제 */
+    font-size: 13px;
+  }
+
+  /* 검색창 영역 - 전체 너비 차지 */
+  .community-searchInput-box {
+    grid-column: span 2; /* 💡 두 칸을 다 차지하도록 설정 */
+    margin-top: 4px;
+  }
+
+  .community-searchInput-box input {
+    font-size: 13px;
+  }
+
+  .search-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+/* 3. 초소형 모바일 (480px 이하) */
+@media screen and (max-width: 480px) {
+  .community-filter-group {
+    padding: 8px;
+  }
+  
+  .community-tag-group select,
+  .community-search-group select {
+    padding: 8px 5px; /* 내부 여백 줄임 */
+  }
+}

@@ -1,0 +1,456 @@
+/* yein - 주문 내역 */
+
+.paymentList {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 0 20px 2rem;
+  font-family: 'Pretendard', sans-serif;
+  box-sizing: border-box;
+}
+
+.paymentList-con h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 0 2rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 개별 주문 카드 레이아웃 */
+.orderItem {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.orderItem > p {
+  margin: 10px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.orderItem p strong {
+  color: #222;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+/* 주문 상품 목록 */
+.orderProduct {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 5px 20px;
+  margin: 20px 0;
+}
+
+.orderProduct-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.orderProduct-con:hover {
+  cursor: pointer;
+  background: #f1f3f5;
+  border-radius: 8px;
+}
+
+.orderProduct-con:last-child {
+  border-bottom: none;
+}
+
+.orderProduct-con img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+.orderProduct-info {
+  flex: 1;
+}
+
+.orderProduct-info .name {
+  font-size: 14px !important;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.orderProduct-info p {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 0.7rem !important;
+  color: #777;
+}
+
+.orderProduct-price {
+  color: #222 !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-align: right;
+  min-width: 80px;
+}
+
+.orderItem > p:last-child {
+  font-size: 1.3rem !important;
+  font-weight: bold;
+  color: #222;
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* 버튼 스타일 */
+.orderItem button {
+  padding: 8px 16px;
+  margin: 10px 8px 10px 0;
+  border-radius: 0.6rem;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #666;
+}
+
+.orderItem button:hover {
+  background: #f9f9f9;
+  color: #222;
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.orderItem button[onClick*="handleCancel"] {
+  border-color: #ffc9c9;
+  color: #fa5252;
+}
+
+.orderItem button[onClick*="handleCancel"]:hover {
+  background: #fff5f5;
+  border-color: #ffa8a8;
+}
+
+.paymentList-con > button {
+  width: 100%;
+  height: 48px;
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.paymentList-con > button:first-of-type {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #888;
+}
+
+.paymentList-con > button:first-of-type:hover {
+  background: #f9f9f9;
+  color: #333;
+  border-color: #bbb;
+}
+
+.paymentList-con > button:last-of-type:not(:first-of-type) {
+  background: #ff8800;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 10px rgba(255, 136, 0, 0.2);
+}
+
+.paymentList-con > button:last-of-type:not(:first-of-type):hover {
+  background: #e27901;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 136, 0, 0.3);
+}
+
+/* 주문 상태 게이지바 */
+.gauge-container {
+  margin: 30px 0 50px;
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.gauge-track {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  right: 10px;
+  height: 4px;
+  background: #eee;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.gauge-fill {
+  height: 100%;
+  background: #ff8800;
+  transition: width 0.4s ease-out;
+  border-radius: 2px;
+}
+
+.steps-row {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.step-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.step-point {
+  width: 16px;
+  height: 16px;
+  background: #eee;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 0 0 1px #eee;
+  transition: all 0.3s ease;
+}
+
+.step-unit.active .step-point {
+  background: #ff8800;
+  box-shadow: 0 0 0 1px #ff8800;
+  transform: scale(1.1);
+}
+
+.step-label {
+  font-size: 11px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.step-unit.active .step-label {
+  color: #ff8800;
+  font-weight: bold;
+}
+
+/* 공통 상태 레이아웃 */
+.pl-empty-cart, .pl-loading-con, .pl-error-con {
+  width: 100%;
+  max-width: 1200px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.pl-empty-cart::before {
+  content: "📝";
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  animation: pl-float 2s ease-in-out infinite;
+  display: block;
+}
+
+.pl-empty-cart p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  padding-bottom: 1rem;
+  margin: 0;
+}
+
+.pl-empty-cart::after {
+  content: "아직 주문하신 내역이 없네요.";
+  font-size: 0.8rem;
+  color: #999;
+  padding-top: 0.7rem;
+  display: block;
+  padding-bottom: 1.5rem;
+}
+
+.pl-empty-cart button {
+  background-color: #ff8800;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 3rem;
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(255, 136, 0, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pl-empty-cart button:hover {
+  background-color: #e67a00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 136, 0, 0.4);
+}
+
+/* 로딩 상태 */
+.pl-loading-con {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff8800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pl-loading-con::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0; 
+  display: block;
+  box-sizing: border-box;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #ff8800;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: pl-spin 1s linear infinite;
+}
+
+.pl-error-con {
+  gap: 1rem;
+}
+
+.pl-error-con p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff4d4d;
+  padding-bottom: 0.5rem;
+  margin: 0;
+}
+
+.pl-error-con button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pl-error-con button:hover {
+  background-color: #505050;
+}
+
+@keyframes pl-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes pl-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 상단 이동 버튼 */
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 48px;
+  height: 48px;
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  background-color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 반응형 레이아웃 */
+@media screen and (max-width: 1024px) {
+  .paymentList {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .paymentList {
+    width: 100%;
+    padding: 0 15px 2rem;
+  }
+
+  .paymentList-con h2 {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+  }
+
+  .orderItem button {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin: 5px 5px 5px 0;
+  }
+
+  .orderItem > p:last-child {
+    font-size: 18px !important;
+    border-top: 1px dashed #eee;
+    padding-top: 15px;
+  }
+
+  .paymentList-con > button {
+    width: 100%;
+    height: 3.2rem;
+    padding: 8px 0;
+    box-sizing: border-box;
+    font-size: 17px;
+  }
+
+  .gauge-container {
+    margin: 20px 0 40px;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+
+  .scroll-to-top {
+    width: 42px;
+    height: 42px;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .scroll-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}

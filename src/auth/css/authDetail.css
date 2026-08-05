@@ -1,0 +1,279 @@
+/* authDetail.css */
+
+/* 계정 상세정보 페이지 */
+
+.authDetail {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 4vh 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff7ee;
+}
+
+.authDetail .authDetail-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+}
+
+/* 메인컨텐츠 스타일 */
+.authDetail .authDetail-con>ul {
+  box-sizing: border-box;
+  width: 600px;
+  background-color: #ffffffbe;
+  border-radius: 2vw;
+  padding: 2vw;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.authDetail .authDetail-con ul>li>h1 {
+  font-size: 2rem;
+  color: #ff8800;
+}
+
+.authDetail .authDetail-con>ul>li {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vh 0px;
+  border-bottom: 1px solid #eee;
+}
+
+/* span태그쪽 설정 */
+.authDetail .authDetail-con>ul>li>span:first-child {
+  font-size: inherit;
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+}
+
+.authDetail .authDetail-con>ul>li>span:last-child {
+  position: relative;
+  flex: 2;
+  color: #333;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0px 1vw;
+}
+
+.authDetail .authDetail-con>ul>li>span:last-child::after {
+  content: '|';
+  position: absolute;
+  z-index: 999;
+  top: 0px;
+  left: -10px;
+  color: #c0c0c0;
+}
+
+/* 마지막 버튼 영역 */
+.authDetail .authDetail-con ul li:last-child {
+  box-sizing: border-box;
+  border-bottom: none;
+  padding-top: 2vh;
+  gap: 2vw;
+}
+
+/* 버튼 스타일 */
+.authDetail-con button {
+  box-sizing: border-box;
+  flex: 1;
+  padding: 24px 24px;
+  border-radius: 1vw;
+  border: 2px solid #ff8800;
+  background-color: #ff8800;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.authDetail-con button:hover {
+  background-color: #fff;
+  color: #ff8800;
+}
+
+/* 오른쪽 고정 메뉴 */
+.authDetail .right-con {
+  box-sizing: border-box;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  padding: 2vh;
+  z-index: 1000;
+}
+
+.authDetail .right-con .default-con {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.authDetail .right-con .default-con span {
+  box-sizing: border-box;
+  padding: 1vh 1vw;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2vw;
+  cursor: pointer;
+  background-color: #ff8800;
+  color: #ffffff;
+  transition: all 0.2s;
+}
+
+.authDetail .right-con .default-con span:hover {
+  background-color: #d4881f;
+  transform: translateY(-0.25vh);
+}
+
+/* 햄버거 메뉴아이콘 만들기 */
+/* 출처 : https://zerotonine2da.tistory.com/206 */
+
+.authDetail .menuIcon {
+  display: none;
+  justify-content: flex-start;
+  align-content: center;
+  height: 20px;
+  position: relative;
+}
+
+.authDetail .menuIcon label {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.authDetail .menuSpan {
+  z-index: 1000;
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  border-radius: 25px;
+  background-color: #ff8800;
+  transition: all 0.2s;
+}
+
+.authDetail .menuSpan:nth-child(1) {
+  /* 첫번째 span 요소*/
+  top: 0;
+}
+
+.authDetail .menuSpan:nth-child(2) {
+  /* 두번째 span 요소*/
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.authDetail .menuSpan:nth-child(3) {
+  /* 세번째 span 요소*/
+  bottom: 0;
+}
+
+/* 체크박스가 활성화가 되면 실행(햄버거에서 X로) */
+.authDetail .sidebar:hover .menuSpan:nth-child(1) {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #ff8800;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-left: 20px solid #ffffff00;
+  border-radius: 0px;
+  background-color:transparent;
+}
+
+.authDetail .sidebar:hover .menuSpan:nth-child(2) {
+  opacity: 0;
+}
+
+.authDetail .sidebar:hover .menuSpan:nth-child(3) {
+  opacity: 0;
+}
+
+/* 호버링시 보이게 설정 */
+.authDetail .right-con .sidebar:hover {
+  right: 0px;
+}
+
+/* 햄버거메뉴를 누른뒤 나오게될 사이드바 스타일 */
+.authDetail .right-con .sidebar {
+  display: none;
+  flex-direction: column;
+  width: 200px;
+  height: 100vh;
+  background-color: #0000009f;
+  position: absolute;
+  top: 0px;
+  right: -140px;
+  z-index: 1;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  gap: 1vh;
+  padding: 25px 16px;
+}
+
+.authDetail .right-con .sidebar>ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  box-sizing: border-box;
+  padding-top: 8vh;
+  padding-right: 0px;
+  gap: 1vh;
+}
+
+.authDetail .right-con .sidebar>ul>li {
+  width: 80px;
+  display: block;
+  padding: 2vh;
+  background-color: #ff8800;
+  transition: all 0.2s;
+  border-radius: 1vh;
+}
+
+.authDetail .right-con .sidebar ul>li:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #ff8800;
+}
+
+
+@media screen and (max-width:1024px) {
+  .authDetail .authDetail-con>ul {
+    width: 500px;
+  }
+
+
+}
+
+@media screen and (max-width:768px) {
+  .authDetail .authDetail-con>ul {
+    width: 350px;
+  }
+
+  .authDetail .right-con .default-con {
+    display: none;
+  }
+  .authDetail .right-con .sidebar{
+  display: flex;
+  
+  }
+
+  .authDetail .menuIcon {
+    display: flex;
+  }
+}

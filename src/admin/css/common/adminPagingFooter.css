@@ -1,0 +1,70 @@
+/* adminPagingFooter.css */
+
+/* 관리자페이지의 페이징기능 중 페이지 설정기능의 스타일 */
+
+.adminPaging-footer {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 1vh;
+}
+/* 페이징 버튼 스타일 */
+.adminPaging-footer .adminPagingNum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+.adminPaging-footer .adminPagingNum button {
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #f1d3a3;
+  background-color: #ffffff;
+  color: #8a5a15;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.adminPaging-footer .adminPagingNum button:hover:not(:disabled) {
+  background-color: #fff3e0;
+  border-color: #ff8800;
+  color: #ff8800;
+}
+.adminPaging-footer .adminPagingNum button:disabled {
+  background-color: #f8f4ee;
+  border-color: #eee2d1;
+  color: #c2a57a;
+  cursor: not-allowed;
+}
+.adminPaging-footer .adminPagingNum .first,
+.adminPaging-footer .adminPagingNum .last {
+  font-weight: bold;
+}
+
+.adminPaging-footer .adminPagingNum .prev,
+.adminPaging-footer .adminPagingNum .next {
+  font-weight: bold;
+}
+
+/* 삭제버튼 스타일 */
+.adminPaging-footer .deleteBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+.adminPaging-footer .deleteBtn button {
+  box-sizing: border-box;
+  padding: 1vh 2vw;
+  border-radius: 1vw;
+  border: 0px;
+  background-color: #ff8800;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.adminPaging-footer .deleteBtn button:hover {
+  background-color: #c8841f;
+}

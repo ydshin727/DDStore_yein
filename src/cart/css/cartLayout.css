@@ -1,0 +1,13 @@
+/* yein - 장바구니 Layout */
+
+/* 레이아웃 전체 설정 */
+.cart-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 본문 영역 설정 */
+.cart-main {
+  flex: 1;
+}

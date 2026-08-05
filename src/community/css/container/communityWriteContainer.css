@@ -1,0 +1,212 @@
+/* ==========================================================================
+   1. 전체 레이아웃 (가로 스크롤 방지 공통 설정)
+   ========================================================================== */
+.community-write {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Pretendard', sans-serif;
+    box-sizing: border-box; /* 💡 가로 스크롤 방지 */
+}
+
+/* 폼 컨테이너: 주황색 테마 강조 */
+.community-write-con {
+    background-color: #fff;
+    border: 2px solid #ff8800; 
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(255, 136, 0, 0.08);
+    box-sizing: border-box; /* 💡 내부 요소 넘침 방지 */
+    width: 100%;
+}
+
+.community-write-con h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #222;
+    margin: 0 0 30px 0;
+    text-align: center;
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 20px;
+}
+
+/* ==========================================================================
+   2. 옵션 및 입력 영역 (Select & Checkbox)
+   ========================================================================== */
+/* 옵션 그룹 컨테이너 */
+.write-options, 
+.input-wrapper, 
+.textarea-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* 태그 및 옵션 선택 */
+.write-options select {
+    width: 200px;
+    max-width: 100%; /* 💡 모바일에서 화면 밖으로 삐져나감 방지 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+.write-options select:focus { border-color: #ff8800; }
+
+/* 공지사항 상단 고정 체크박스 */
+.fixed-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff4e00;
+    cursor: pointer;
+}
+.fixed-checkbox input { width: 18px; height: 18px; accent-color: #c96b00f6; }
+
+/* ==========================================================================
+   3. 제목 및 내용 입력창 (Input & Textarea)
+   ========================================================================== */
+.input-wrapper input,
+.textarea-wrapper textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    outline: none;
+    background-color: #fcfcfc;
+    box-sizing: border-box; /* 💡 패딩(15px)으로 인한 가로 길이 초과 방지 */
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+/* 포커스 시 주황색 테두리 효과 */
+.input-wrapper input:focus, 
+.textarea-wrapper textarea:focus {
+    border-color: #ff8800;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 136, 0, 0.1);
+}
+
+/* 본문 입력창 높이 제한 */
+.textarea-wrapper textarea {
+    min-height: 250px;
+    max-height: 600px;
+    resize: vertical; /* 💡 가로 크기 조절 금지 (레이아웃 깨짐 방지) */
+    line-height: 1.6;
+}
+
+/* 글자 수 제한 피드백 */
+.char-count {
+    align-self: flex-end; /* 우측 정렬 */
+    font-size: 12px;
+    color: #999;
+    margin-top: -10px; /* 입력창과 간격 줄임 */
+}
+.char-count.max { color: #ff4d4d; font-weight: 700; }
+
+/* ==========================================================================
+   4. 하단 액션 버튼 (취소/등록)
+   ========================================================================== */
+.btn {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn button {
+    padding: 12px 40px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 취소 버튼 */
+.cancel-btn {
+    background-color: #f4f4f4;
+    color: #666;
+    border: 1px solid #ddd;
+}
+.cancel-btn:hover { background-color: #fff; border-color: #ff8800; color: #ff8800; }
+
+/* 등록 버튼 */
+.submit-btn {
+    background-color: #ff8800;
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 10px rgba(255, 136, 0, 0.2);
+}
+.submit-btn:hover { background-color: #e67a00; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255, 136, 0, 0.3); }
+.submit-btn:active { transform: translateY(1px); }
+
+/* ==========================================================================
+   5. 반응형 최적화 (1024px & 768px)
+   ========================================================================== */
+
+/* 태블릿 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+    .community-write { margin: 40px auto; }
+    .community-write-con { padding: 25px; }
+    .community-write-con h2 { font-size: 24px; margin-bottom: 25px; }
+}
+
+/* 모바일 (768px 이하) */
+@media screen and (max-width: 768px) {
+    .community-write { margin: 20px auto; padding: 0 15px; }
+    .community-write-con { padding: 20px; border-width: 1px; } /* 모바일은 테두리 얇게 */
+    
+    .community-write-con h2 { font-size: 20px; margin-bottom: 20px; padding-bottom: 15px; }
+    
+    .write-options select { width: 100%; } /* 💡 모바일에서는 셀렉트 박스 100% 꽉 채움 */
+    
+    .textarea-wrapper textarea { min-height: 200px; }
+
+    /* 버튼 영역: 좁은 화면에서 좌우 꽉 차게 배치 */
+    .btn { flex-direction: row; gap: 8px; }
+    .btn button { flex: 1; padding: 12px 0; font-size: 14px; }
+}
+
+body .scroll-top-btn {
+    all: unset;
+    /* 기존 모든 스타일 초기화 (매우 중요) */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% !important;
+    background: #333 !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    z-index: 9999;
+
+    /* 애니메이션 관련 */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+/* 상태 및 호버도 동일하게 body 추가 */
+body .scroll-top-btn.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
