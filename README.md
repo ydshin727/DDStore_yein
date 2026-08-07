@@ -152,6 +152,49 @@
 
 ---
 
+## 🤝 협업 및 프로젝트 관리
+
+<table>
+  <tr>
+    <th>협업방식</th>
+    <th>내용</th>
+    <th>예시</th>
+  </tr>
+  <tr>
+    <td>GitHub</td>
+    <td>
+      Git Flow 기반 <br>
+      브랜치 전략 사용</td>
+    <td>
+      master   <br>
+      &nbsp; dev    <br>
+      &nbsp;  ┣ 1-yein  <br>
+      &nbsp;  ┣ 2-팀원명   <br>
+    </td>
+  <tr>
+    <td>Google Sheets</td>
+    <td>
+      매일 작업 내용 기록    <br>  
+      미완료 작업 관리       <br>
+      테스트 결과 공유       <br>
+      다음 작업 계획 수립
+    </td>
+    <td><img width="600" height="300" alt="구글시트" src="https://github.com/user-attachments/assets/3352d42d-b686-41c2-ba9b-5911b1171e53" /></td>
+  </tr>
+  <tr>
+    <td>회의록</td>
+    <td>
+      역할 분담            <br>
+      기능 우선순위 결정    <br>
+      일정 조율            <br>
+      이슈 공유
+    </td>
+    <td><img width="520" height="400" alt="구글시xm1" src="https://github.com/user-attachments/assets/50c7a5ce-d342-4712-b1c2-abbe29193ef0" /></td>
+  </tr>
+</table>
+
+---
+
 ## ⚙️ 프로젝트 수행 경과 - 민예인
 
 <details>
@@ -175,7 +218,7 @@
 </details>
 
 <details>
-  <summary><b>GitHub 협업 관리</b></summary>
+  <summary><b>Git/GitHub 관리</b></summary>
 
   * GitHub Projects 생성 후 팀원별 Issue를 작성하여 담당 기능 관리
   * Issue 기반 팀원별 작업 브랜치(base: dev) 생성
