@@ -179,7 +179,7 @@
       테스트 결과 공유       <br>
       다음 작업 계획 수립
     </td>
-    <td><img width="600" height="300" alt="구글시트" src="https://github.com/user-attachments/assets/3352d42d-b686-41c2-ba9b-5911b1171e53" /></td>
+    <td><img width="500" height="260" alt="구글시트" src="https://github.com/user-attachments/assets/3352d42d-b686-41c2-ba9b-5911b1171e53" /></td>
   </tr>
   <tr>
     <td>회의록</td>
@@ -189,7 +189,7 @@
       일정 조율            <br>
       이슈 공유
     </td>
-    <td><img width="520" height="400" alt="구글시xm1" src="https://github.com/user-attachments/assets/50c7a5ce-d342-4712-b1c2-abbe29193ef0" /></td>
+    <td><img width="480" height="350" alt="구글시xm1" src="https://github.com/user-attachments/assets/50c7a5ce-d342-4712-b1c2-abbe29193ef0" /></td>
   </tr>
 </table>
 
