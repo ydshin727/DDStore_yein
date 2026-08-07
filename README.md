@@ -191,34 +191,6 @@
 </details>
 
 <details>
-  <summary><b>추천 상품</b></summary>
-
-  ### 주요 기능
-  * 결제 전·후 주요 구매 시점에 추천 상품 모달 표시
-    * 상품 상세 페이지에서 **바로 결제** 클릭 (장바구니가 비어있는 경우)
-    * 장바구니 페이지에서 **결제하기** 클릭
-    * **결제 완료** 후
-  * 현재 보고 있는 상품과 장바구니에 담긴 상품을 제외한 추천 상품 2개를 랜덤으로 표시
-  * 추천 상품 클릭 시 해당 상품 상세 페이지로 이동
-  
-  ### 구현
-  * 전체 상품 DB에서 현재 상품과 장바구니 상품을 제외한 데이터를 필터링
-  * 남은 상품 중 랜덤으로 2개를 추출하여 추천
-  * 추천 상품 선택 시 해당 상품 상세 페이지로 이동하거나 기존 결제 흐름을 유지하도록 분기 처리
-  
-  ### 기획 의도
-  * 사용자의 구매 의사가 가장 높은 **결제 전·후 시점**에 추천 상품을 노출하여 추가 구매 유도 및 플랫폼 매출 상승 기대
-  
-  <table>
-    <tr>
-      <td><img width="342" height="400" alt="image" src="https://github.com/user-attachments/assets/f71bda1b-54d2-4d4c-80b1-612d75e39efc" /></td>
-      <td><img width="356" height="400" alt="image" src="https://github.com/user-attachments/assets/8dd71f5e-0e2b-4140-80a2-d37ceb0b95e7" /></td>
-    </tr>
-  </table>
-  
-</details>
-
-<details>
   <summary><b>장바구니</b></summary>
 
   ### 주요 기능
@@ -273,6 +245,34 @@
   ### 시연 영상
   https://github.com/user-attachments/assets/69aade43-3b21-433d-b9f9-ffd4f7809099
 
+</details>
+
+<details>
+  <summary><b>추천 상품</b></summary>
+
+  ### 주요 기능
+  * 결제 전·후 주요 구매 시점에 추천 상품 모달 표시
+    * 상품 상세 페이지에서 **바로 결제** 클릭 (장바구니가 비어있는 경우)
+    * 장바구니 페이지에서 **결제하기** 클릭
+    * **결제 완료** 후
+  * 현재 보고 있는 상품과 장바구니에 담긴 상품을 제외한 추천 상품 2개를 랜덤으로 표시
+  * 추천 상품 클릭 시 해당 상품 상세 페이지로 이동
+  
+  ### 구현
+  * 전체 상품 DB에서 현재 상품과 장바구니 상품을 제외한 데이터를 필터링
+  * 남은 상품 중 랜덤으로 2개를 추출하여 추천
+  * 추천 상품 선택 시 해당 상품 상세 페이지로 이동하거나 기존 결제 흐름을 유지하도록 분기 처리
+  
+  ### 기획 의도
+  * 사용자의 구매 의사가 가장 높은 **결제 전·후 시점**에 추천 상품을 노출하여 추가 구매 유도 및 플랫폼 매출 상승 기대
+  
+  <table>
+    <tr>
+      <td><img width="342" height="400" alt="image" src="https://github.com/user-attachments/assets/f71bda1b-54d2-4d4c-80b1-612d75e39efc" /></td>
+      <td><img width="356" height="400" alt="image" src="https://github.com/user-attachments/assets/8dd71f5e-0e2b-4140-80a2-d37ceb0b95e7" /></td>
+    </tr>
+  </table>
+  
 </details>
 
 <details>
